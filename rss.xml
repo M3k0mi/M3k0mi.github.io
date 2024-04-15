@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>Hexo</title>
+        <title>blog</title>
         <subtitle></subtitle>
         <icon>http://example.com/assets/favicon.ico</icon>
         <link>http://example.com</link>
         <author>
-          <name>John Doe</name>
+          <name>M3k0mi</name>
         </author>
         <description></description>
         <language>zh-CN</language>

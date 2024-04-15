@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
-    <title>Hexo</title>
+    <title>blog</title>
     <subtitle></subtitle>
     <icon>http://example.com/assets/favicon.ico</icon>
     <link href="http://example.com" />
     <author>
-      <name>John Doe</name>
+      <name>M3k0mi</name>
     </author>
     <updated>2024-04-15T08:16:05.022Z</updated>
     <entry>
