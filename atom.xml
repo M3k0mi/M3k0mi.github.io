@@ -54,7 +54,10 @@
 &lt;p&gt;例如 [T]?he 匹配字符串 he 和 The&lt;/p&gt;
 &lt;h4 id=&#34;-5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-5&#34;&gt;#&lt;/a&gt; {}&lt;/h4&gt;
 &lt;p&gt;是一个量词，常用来限定一个或一组字符可以重复出现的次数。&lt;/p&gt;
-&lt;p&gt;例如 &lt;span 2,3=&#34;&#34;&gt;0-9&lt;/span&gt; 匹配最少两位最多三位的 0~9 的数字 如：999 10 等&lt;/p&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[0-9]&amp;#123;2,3&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;匹配最少两位最多三位的 0~9 的数字 如：999 10 等&lt;/p&gt;
 &lt;h4 id=&#34;特征标群&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特征标群&#34;&gt;#&lt;/a&gt; 特征标群 (...)&lt;/h4&gt;
 &lt;p&gt;(...) 中包含的内容会被看成一个整体，和数学中的小括号 () 作用相同&lt;/p&gt;
 &lt;p&gt;例如 (th) e 匹配 the，不匹配 te、he，注意跟字符集 [ ] 区分开来&lt;/p&gt;
