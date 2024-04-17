@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>blog</title>
+        <title>M3k0mi&#39;sblog</title>
         <subtitle></subtitle>
         <icon>http://example.com/assets/favicon.ico</icon>
         <link>http://example.com</link>
@@ -13,16 +13,16 @@
         <pubDate>Tue, 16 Apr 2024 14:34:12 +0800</pubDate>
         <lastBuildDate>Tue, 16 Apr 2024 14:34:12 +0800</lastBuildDate>
         <item>
-            <guid isPermalink="true">http://example.com/2024/04/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+            <guid isPermalink="true">http://example.com/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
             <title>初识正则表达式</title>
-            <link>http://example.com/2024/04/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+            <link>http://example.com/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
             <category term="正则表达式" scheme="http://example.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
             <category term="正则表达式" scheme="http://example.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
             <pubDate>Tue, 16 Apr 2024 14:34:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;正则表达式 (Regular Expression) 是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为 &amp;quot;元字符&amp;quot;），可以用来描述和匹配字符串的特定模式。&lt;/p&gt;
 &lt;p&gt;其实正则表达式就是用来匹配文本的，可以匹配一个或多个字符，灵活地运用正则表达式，就可以完成一些复杂的操作，比如：&lt;/p&gt;
 &lt;p&gt;​		Email 地址：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+&lt;pre&gt;&lt;code&gt;^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;​		域名：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[a-zA-Z0-9][-a-zA-Z0-9]&amp;#123;0,62&amp;#125;(/.[a-zA-Z0-9][-a-zA-Z0-9]&amp;#123;0,62&amp;#125;)+/.?
@@ -56,6 +56,168 @@
 &lt;p&gt;+ 与上个字符类似，匹配该字符之前出现的次数 &amp;gt;=1 次&lt;/p&gt;
 &lt;p&gt;c+at 匹配 cat、ccat 但不匹配 at&lt;/p&gt;
 &lt;h4 id=&#34;-4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-4&#34;&gt;#&lt;/a&gt; ?&lt;/h4&gt;
+&lt;p&gt;标记在符号前面的字符为可选，即出现 0 或 1 次&lt;/p&gt;
+&lt;p&gt;例如 [T]?he 匹配字符串 he 和 The&lt;/p&gt;
+&lt;h4 id=&#34;-5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-5&#34;&gt;#&lt;/a&gt; {}&lt;/h4&gt;
+&lt;p&gt;是一个量词，常用来限定一个或一组字符可以重复出现的次数。&lt;/p&gt;
+&lt;p&gt;例如 &lt;span 2,3=&#34;&#34;&gt;0-9&lt;/span&gt; 匹配最少两位最多三位的 0~9 的数字 如：999 10 等&lt;/p&gt;
+&lt;h4 id=&#34;特征标群&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特征标群&#34;&gt;#&lt;/a&gt; 特征标群 (...)&lt;/h4&gt;
+&lt;p&gt;(...) 中包含的内容会被看成一个整体，和数学中的小括号 () 作用相同&lt;/p&gt;
+&lt;p&gt;例如 (th) e 匹配 the，不匹配 te、he，注意跟字符集 [ ] 区分开来&lt;/p&gt;
+&lt;h4 id=&#34;或运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#或运算符&#34;&gt;#&lt;/a&gt; 或运算符 |&lt;/h4&gt;
+&lt;p&gt;用作判断条件&lt;/p&gt;
+&lt;p&gt;例如 (T|t) he 匹配 the The&lt;/p&gt;
+&lt;h4 id=&#34;转码特殊字符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#转码特殊字符&#34;&gt;#&lt;/a&gt; 转码特殊字符 \&lt;/h4&gt;
+&lt;p&gt;反斜杠 \ 在表达式中用于转码紧跟其后的字符，用于指定 {} [] / \ + * . $ ^ | ? 这些特殊字符&lt;/p&gt;
+&lt;p&gt;作用就是跟上边的元字符区分开来，例如&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\[
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表示匹配 [字符，跟字符集区分开来&lt;/p&gt;
+&lt;h4 id=&#34;和&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#和&#34;&gt;#&lt;/a&gt; ^ 和 $&lt;/h4&gt;
+&lt;p&gt;^ 匹配字符串输入的开始，$ 则匹配字符串输入的结束&lt;/p&gt;
+&lt;p&gt;首先 (t|h) e 匹配 te、he、ahe 等，但是 ^(t|h) e，匹配的字符串必须以 te 或 he 开头&lt;/p&gt;
+&lt;p&gt;$ 和 ^ 同理&lt;/p&gt;
+&lt;h3 id=&#34;简写字符集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简写字符集&#34;&gt;#&lt;/a&gt; 简写字符集&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;简写字符集&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;.&lt;/td&gt;
+&lt;td&gt;除换行符外所有字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\w&lt;/td&gt;
+&lt;td&gt;匹配所有字母数字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\W&lt;/td&gt;
+&lt;td&gt;匹配所有非字母数字，即符号 等同于 [^ \ w]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\d&lt;/td&gt;
+&lt;td&gt;匹配数字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\D&lt;/td&gt;
+&lt;td&gt;匹配非数字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\s&lt;/td&gt;
+&lt;td&gt;匹配所有空格字符，等同于 [\t\n\f\r\p {Z}]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\S&lt;/td&gt;
+&lt;td&gt;匹配所有非空格字符 [^ \ s]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\f&lt;/td&gt;
+&lt;td&gt;匹配一个换页符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\n&lt;/td&gt;
+&lt;td&gt;匹配一个换行符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\r&lt;/td&gt;
+&lt;td&gt;匹配一个回车符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\t&lt;/td&gt;
+&lt;td&gt;匹配一个制表符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\v&lt;/td&gt;
+&lt;td&gt;匹配一个垂直制表符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\p&lt;/td&gt;
+&lt;td&gt;匹配 CR/LF (等同于 \r\n)，用来匹配 DOS 终止符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;简写字符集主要是提供便利，比如我想匹配所有数字，只需要 \d 就可以了，而不用 [0-9]&lt;/p&gt;
+&lt;h3 id=&#34;标记&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#标记&#34;&gt;#&lt;/a&gt; 标记&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;标记&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;i&lt;/td&gt;
+&lt;td&gt;不区分大小写：将匹配设置为不区分大小写。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;g&lt;/td&gt;
+&lt;td&gt;全局搜索：搜索整个输入字符串中的所有匹配。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;m&lt;/td&gt;
+&lt;td&gt;多行匹配：会匹配输入字符串每一行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;比如我想匹配 cat 这个字符串，但是也想匹配 Cat，CAt，cAt 等等，一个一个写就会非常麻烦，只要用到标记 i，/cat/i 就可以不区分大小写匹配 cat 了&lt;/p&gt;
+&lt;p&gt;正则在匹配到第一个就会结束，但是标记 g 可以让他继续匹配，从整个字符串找到匹配项&lt;/p&gt;
+&lt;h3 id=&#34;断言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#断言&#34;&gt;#&lt;/a&gt; 断言&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;断言&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;?=&lt;/td&gt;
+&lt;td&gt;正向先行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?!&lt;/td&gt;
+&lt;td&gt;负向先行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?&amp;lt;=&lt;/td&gt;
+&lt;td&gt;正向后行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?&amp;lt;!&lt;/td&gt;
+&lt;td&gt;负向后行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;-6&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-6&#34;&gt;#&lt;/a&gt; ?=&lt;/h4&gt;
+&lt;p&gt;正向先行断言表示后面必须跟着？= 定义的表达式&lt;/p&gt;
+&lt;p&gt;例如：(T|t) he (?=\sfat)&lt;/p&gt;
+&lt;p&gt;这个正则由 3 个部分组成，(T|t) 表示 T 或 t 中的一个，he 字符串，(?=\sfat) 正向先行断言，\s 匹配所有空格符，表示后面必须跟着 空格 fat&lt;/p&gt;
+&lt;p&gt;那么这段正则就匹配 the fat 或 The fat&lt;/p&gt;
+&lt;h4 id=&#34;-7&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-7&#34;&gt;#&lt;/a&gt; ?!&lt;/h4&gt;
+&lt;p&gt;负向先行断言就跟正向先行断言相反，表示后面不能跟着？！定义的表达式&lt;/p&gt;
+&lt;h4 id=&#34;-8&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-8&#34;&gt;#&lt;/a&gt; ?&amp;lt;=&lt;/h4&gt;
+&lt;p&gt;正向后行断言表示前面必须跟着？= 定义的表达式&lt;/p&gt;
+&lt;p&gt;(?&amp;lt;=(T|t) he\s)(fat|mat) 匹配 the 或 The 后面的 fat、mat&lt;/p&gt;
+&lt;h4 id=&#34;-9&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-9&#34;&gt;#&lt;/a&gt; ?&amp;lt;!&lt;/h4&gt;
+&lt;p&gt;负向后行断言与正向先行断言相反，表示前面不能跟着？&amp;lt;! 定义的表达式&lt;/p&gt;
+&lt;h3 id=&#34;应用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应用&#34;&gt;#&lt;/a&gt; 应用&lt;/h3&gt;
+&lt;p&gt;看到这里，已经全部学会了，那么再回过头来看看前面举到的电子邮箱吧 (注意：正则可以有多种写法，不唯一)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;首先就是 ^ 和 $，表示开头和结尾&lt;/p&gt;
+&lt;p&gt;然后这段正则可以分为四段&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[a-zA-Z0-9_-]+ 	@	[a-zA-Z0-9_-]+	(\.[a-zA-Z0-9_-]+)+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一段表示多个字母或数字或下划线&lt;/p&gt;
+&lt;p&gt;第二段就是字符 @&lt;/p&gt;
+&lt;p&gt;第三段和第二段一样&lt;/p&gt;
+&lt;p&gt;第四段表示。后面跟多个字母或数字或下划线&lt;/p&gt;
+&lt;p&gt;组合起来如：123@123.com ，就是电子邮箱的格式&lt;/p&gt;
  ]]></description>
         </item>
         <item>
