@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://m3k0mi.github.io</id>
     <title>M3k0mi&#39;s blog</title>
     <subtitle></subtitle>
-    <icon>http://example.com/assets/favicon.ico</icon>
-    <link href="http://example.com" />
+    <icon>http://m3k0mi.github.io/assets/favicon.ico</icon>
+    <link href="http://m3k0mi.github.io" />
     <author>
       <name>M3k0mi</name>
     </author>
     <updated>2024-04-16T06:34:12.000Z</updated>
     <entry>
-        <id>http://example.com/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+        <id>http://m3k0mi.github.io/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
         <title>初识正则表达式</title>
-        <link rel="alternate" href="http://example.com/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
         <content type="html">&lt;p&gt;正则表达式 (Regular Expression) 是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为 &amp;quot;元字符&amp;quot;），可以用来描述和匹配字符串的特定模式。&lt;/p&gt;
 &lt;p&gt;其实正则表达式就是用来匹配文本的，可以匹配一个或多个字符，灵活地运用正则表达式，就可以完成一些复杂的操作，比如：&lt;/p&gt;
 &lt;p&gt;​		Email 地址：&lt;/p&gt;
@@ -213,14 +213,14 @@
 &lt;p&gt;第四段表示。后面跟多个字母或数字或下划线&lt;/p&gt;
 &lt;p&gt;组合起来如：123@123.com ，就是电子邮箱的格式&lt;/p&gt;
 </content>
-        <category term="正则表达式" scheme="http://example.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
-        <category term="正则表达式" scheme="http://example.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
+        <category term="正则表达式" scheme="http://m3k0mi.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
+        <category term="正则表达式" scheme="http://m3k0mi.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
         <updated>2024-04-16T06:34:12.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/04/15/web%E5%85%A5%E9%97%A8/</id>
+        <id>http://m3k0mi.github.io/2024/04/15/web%E5%85%A5%E9%97%A8/</id>
         <title>web入门</title>
-        <link rel="alternate" href="http://example.com/2024/04/15/web%E5%85%A5%E9%97%A8/"/>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/04/15/web%E5%85%A5%E9%97%A8/"/>
         <content type="html">&lt;h3 id=&#34;入门指南&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#入门指南&#34;&gt;#&lt;/a&gt; 入门指南&lt;/h3&gt;
 &lt;h4 id=&#34;一些在线做题网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一些在线做题网站&#34;&gt;#&lt;/a&gt; 一些在线做题网站：&lt;/h4&gt;
 &lt;ol&gt;
@@ -249,9 +249,9 @@
 &lt;/ol&gt;
 &lt;p&gt;#该文章测试用&lt;/p&gt;
 </content>
-        <category term="web安全" scheme="http://example.com/categories/web%E5%AE%89%E5%85%A8/" />
-        <category term="入门" scheme="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E5%85%A5%E9%97%A8/" />
-        <category term="web安全" scheme="http://example.com/tags/web%E5%AE%89%E5%85%A8/" />
+        <category term="web安全" scheme="http://m3k0mi.github.io/categories/web%E5%AE%89%E5%85%A8/" />
+        <category term="入门" scheme="http://m3k0mi.github.io/categories/web%E5%AE%89%E5%85%A8/%E5%85%A5%E9%97%A8/" />
+        <category term="web安全" scheme="http://m3k0mi.github.io/tags/web%E5%AE%89%E5%85%A8/" />
         <updated>2024-04-15T12:09:10.000Z</updated>
     </entry>
 </feed>
