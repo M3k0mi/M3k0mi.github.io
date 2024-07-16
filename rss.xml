@@ -36,7 +36,7 @@
             <category term="wp" scheme="http://m3k0mi.github.io/tags/wp/" />
             <pubDate>Sat, 01 Jun 2024 11:57:32 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;sas-serializing-authentication-system&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sas-serializing-authentication-system&#34;&gt;#&lt;/a&gt; SAS - Serializing Authentication System&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://gitee.com/axolotls/images/raw/master/LitCTF/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-01%20095858.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://gitee.com/axolotls/images/blob/master/LitCTF/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-01%20095858.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;题目提示是一道反序列化题目，并且会将传入的数据 base64 解码&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://gitee.com/axolotls/images/raw/master/LitCTF/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-01%20095916.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;payload&lt;/p&gt;
