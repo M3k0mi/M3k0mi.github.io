@@ -10,8 +10,40 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 05 Jun 2024 18:31:46 +0800</pubDate>
-        <lastBuildDate>Wed, 05 Jun 2024 18:31:46 +0800</lastBuildDate>
+        <pubDate>Sun, 28 Sep 2025 16:35:13 +0800</pubDate>
+        <lastBuildDate>Sun, 28 Sep 2025 16:35:13 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://m3k0mi.github.io/2025/09/28/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A51/</guid>
+            <title>基础软件训练营1</title>
+            <link>http://m3k0mi.github.io/2025/09/28/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A51/</link>
+            <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
+            <category term="基础软件训练营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A5/" />
+            <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
+            <pubDate>Sun, 28 Sep 2025 16:35:13 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;操作系统的基本组成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#操作系统的基本组成&#34;&gt;#&lt;/a&gt; 操作系统的基本组成&lt;/h3&gt;
+&lt;p&gt;1. 系统内核&lt;br /&gt;
+ 2. 系统调用接口&lt;br /&gt;
+ 3. 应用程序&lt;/p&gt;
+&lt;h3 id=&#34;用户界面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用户界面&#34;&gt;#&lt;/a&gt; 用户界面&lt;/h3&gt;
+&lt;p&gt;1.cli 文本模式下的指令界面&lt;br /&gt;
+ 2.Gui 图形界面下的用户界面&lt;/p&gt;
+&lt;h3 id=&#34;unix设计美学&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#unix设计美学&#34;&gt;#&lt;/a&gt; UNIX 设计美学&lt;/h3&gt;
+&lt;p&gt;1. 小即是美&lt;br /&gt;
+ 2. 只做一件事，并做到极致&lt;br /&gt;
+ 3. 连结程序，协作完成复杂功能&lt;br /&gt;
+ 4. 提供机制，而非策略&lt;br /&gt;
+ 5. 使用纯文本来存储信息&lt;br /&gt;
+ 6. 一切皆是文件&lt;/p&gt;
+&lt;h3 id=&#34;openeuler&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#openeuler&#34;&gt;#&lt;/a&gt; openEuler&lt;/h3&gt;
+&lt;p&gt;是面向数组基础设施的开源操作系统&lt;/p&gt;
+&lt;p&gt;1. 多核调度技术&lt;br /&gt;
+ 2. 软硬件协同&lt;br /&gt;
+ 3. 轻量级虚拟化&lt;br /&gt;
+ 4. 智能优化引擎&lt;/p&gt;
+&lt;p&gt;rpm 管理软件包&lt;/p&gt;
+&lt;p&gt;面向企业的 Linux 发行版&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://m3k0mi.github.io/2024/06/05/%E6%97%A5%E5%BF%97%E6%B3%A8%E5%85%A5-web150/</guid>
             <title>日志注入-web150</title>

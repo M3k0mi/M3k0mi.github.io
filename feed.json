@@ -7,6 +7,18 @@
     "home_page_url": "http://m3k0mi.github.io",
     "items": [
         {
+            "id": "http://m3k0mi.github.io/2025/09/28/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A51/",
+            "url": "http://m3k0mi.github.io/2025/09/28/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A51/",
+            "title": "基础软件训练营1",
+            "date_published": "2025-09-28T08:35:13.000Z",
+            "content_html": "<h3 id=\"操作系统的基本组成\"><a class=\"anchor\" href=\"#操作系统的基本组成\">#</a> 操作系统的基本组成</h3>\n<p>1. 系统内核<br />\n 2. 系统调用接口<br />\n 3. 应用程序</p>\n<h3 id=\"用户界面\"><a class=\"anchor\" href=\"#用户界面\">#</a> 用户界面</h3>\n<p>1.cli 文本模式下的指令界面<br />\n 2.Gui 图形界面下的用户界面</p>\n<h3 id=\"unix设计美学\"><a class=\"anchor\" href=\"#unix设计美学\">#</a> UNIX 设计美学</h3>\n<p>1. 小即是美<br />\n 2. 只做一件事，并做到极致<br />\n 3. 连结程序，协作完成复杂功能<br />\n 4. 提供机制，而非策略<br />\n 5. 使用纯文本来存储信息<br />\n 6. 一切皆是文件</p>\n<h3 id=\"openeuler\"><a class=\"anchor\" href=\"#openeuler\">#</a> openEuler</h3>\n<p>是面向数组基础设施的开源操作系统</p>\n<p>1. 多核调度技术<br />\n 2. 软硬件协同<br />\n 3. 轻量级虚拟化<br />\n 4. 智能优化引擎</p>\n<p>rpm 管理软件包</p>\n<p>面向企业的 Linux 发行版</p>\n",
+            "tags": [
+                "ICT",
+                "基础软件训练营",
+                "ICT"
+            ]
+        },
+        {
             "id": "http://m3k0mi.github.io/2024/06/05/%E6%97%A5%E5%BF%97%E6%B3%A8%E5%85%A5-web150/",
             "url": "http://m3k0mi.github.io/2024/06/05/%E6%97%A5%E5%BF%97%E6%B3%A8%E5%85%A5-web150/",
             "title": "日志注入-web150",
