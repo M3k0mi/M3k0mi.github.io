@@ -7,6 +7,30 @@
     "home_page_url": "http://m3k0mi.github.io",
     "items": [
         {
+            "id": "http://m3k0mi.github.io/2025/10/10/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A55/",
+            "url": "http://m3k0mi.github.io/2025/10/10/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A55/",
+            "title": "基础软件训练营5",
+            "date_published": "2025-10-10T03:06:05.000Z",
+            "content_html": "<h3 id=\"vmware\"><a class=\"anchor\" href=\"#vmware\">#</a> VMware</h3>\n<h4 id=\"硬件兼容性\"><a class=\"anchor\" href=\"#硬件兼容性\">#</a> 硬件兼容性</h4>\n<p>相当于在购买电脑时的主板配置，即主板最多支持多大的内存和硬盘以及 CPU</p>\n<h4 id=\"安装操作系统\"><a class=\"anchor\" href=\"#安装操作系统\">#</a> 安装操作系统</h4>\n<p>安装程序光盘映像文件，VMware 将自动安装操作系统，一般选稍后安装</p>\n<h4 id=\"选择客户机操作系统\"><a class=\"anchor\" href=\"#选择客户机操作系统\">#</a> 选择客户机操作系统</h4>\n<p>根据选择项，来模拟适合该系统的硬件，openEuler 选择‘其他 Linuux5.x 内核 64 位’</p>\n<h4 id=\"处理器配置\"><a class=\"anchor\" href=\"#处理器配置\">#</a> 处理器配置</h4>\n<p>数量指主板上 CPU 插槽，可以装多少块物理 CPU。每个处理器内核数指一个 CPU 多少核心</p>\n<h4 id=\"内存\"><a class=\"anchor\" href=\"#内存\">#</a> 内存</h4>\n<p>内存分配建议 4G 以上，能完整流畅运行图形化</p>\n<h4 id=\"网络模式\"><a class=\"anchor\" href=\"#网络模式\">#</a> 网络模式</h4>\n<p>可以上网：桥接、NAT</p>\n<p>不上网：仅主机</p>\n<p>不创网卡：不使用网络连接</p>\n<h4 id=\"io控制器\"><a class=\"anchor\" href=\"#io控制器\">#</a> I/O 控制器</h4>\n<p>硬盘上的 IO 控制器，能更好的提升读写效率，通常服务器选择 lsi logic</p>\n<h4 id=\"硬盘类型\"><a class=\"anchor\" href=\"#硬盘类型\">#</a> 硬盘类型</h4>\n<p>IDE-&gt; 并口硬盘 体型大容量小</p>\n<p>scsi/sata 硬盘 -&gt; 串口硬盘 scsi 用在服务器，sata 用在 PC</p>\n<p>NVME 固态卡 -&gt; 通常所说的 m.2 固态硬盘</p>\n<h3 id=\"命令\"><a class=\"anchor\" href=\"#命令\">#</a> 命令</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>systemctl <span class=\"token builtin class-name\">enable</span> <span class=\"token parameter variable\">--now</span> cockpit.socket</pre></td></tr></table></figure><p>开启 cockpit 的 web 控制台，--now 表示当前立即启动</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>systemctl disable <span class=\"token parameter variable\">--now</span> firewalld.service</pre></td></tr></table></figure><p>关闭防火墙</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token function\">ifconfig</span></pre></td></tr></table></figure><p>查寻 ip 地址</p>\n<figure class=\"highlight http\"><figcaption data-lang=\"HTTP\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token header\"><span class=\"token header-name keyword\">https</span><span class=\"token punctuation\">:</span><span class=\"token header-value\">//ip地址:9090</span></span></pre></td></tr></table></figure><p>访问</p>\n<h3 id=\"ukui\"><a class=\"anchor\" href=\"#ukui\">#</a> ukui</h3>\n<p>来自麒麟的桌面应用</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>yum <span class=\"token function\">install</span> ukui</pre></td></tr></table></figure><p>安装 ukui 的包</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>systemctl set-default graphical.target</pre></td></tr></table></figure><p>设置图形化启动</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token function\">reboot</span></pre></td></tr></table></figure><p>重启</p>\n",
+            "tags": [
+                "ICT",
+                "华为大赛暑假集训营",
+                "ICT"
+            ]
+        },
+        {
+            "id": "http://m3k0mi.github.io/2025/10/09/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A54/",
+            "url": "http://m3k0mi.github.io/2025/10/09/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A54/",
+            "title": "基础软件训练营4",
+            "date_published": "2025-10-09T08:08:31.000Z",
+            "content_html": "<h3 id=\"openeuler\"><a class=\"anchor\" href=\"#openeuler\">#</a> openEuler</h3>\n<h4 id=\"开源协议\"><a class=\"anchor\" href=\"#开源协议\">#</a> 开源协议</h4>\n<p>openEuler mulan（木兰宽松许可证）强制开源协议<br />\n CentOS GPL 协议开源 强制开源协议<br />\n MIT 麻省理工开源协议 商用领域最好的协议<br />\n apache liscense apache 基金会的开源协议</p>\n<p>在国内最大的区别在于：A. 由社区驱动（开放原子基金会）B. 完全开源免费</p>\n<p>openEuler 和 CentOs 没有从属关系，都是基于上游的 kernel 来进行构建的</p>\n<p>openEuler 和 CentOS 很多命令一样，原因在于都是基于 RPM 包来构建的软件包，openEuler 使用了红帽开源的 RPM 包管理器，可以兼容 RPM 的软件包</p>\n<h4 id=\"openeuler的发行版本\"><a class=\"anchor\" href=\"#openeuler的发行版本\">#</a> openEuler 的发行版本</h4>\n<p>从 2019 年底开源至今，仅有 3 个版本可以在生产环境使用，但是发布版本不只两个。<br />\n第一个稳定版本 (LTS)：openEuler 20.03 LTS<br />\n 每 2 年发布一个长期支持版 openEuler 22.03 LTS、openEuler 24.03 LTS</p>\n<p>sp: 操作系统服务包 sp1、sp2、sp3、sp4，通常下载最新的版本，服务包指操作系统在一段时间内对软件的 bug 和系统补丁做一个修复集合，用来进行推送更新</p>\n<p>目前推荐 22.03 LTS sp4</p>\n<p>社区发行版：是 openEuler 社区自主发行的原生版本<br />\n商业发行版：是商业公司二次开发的版本</p>\n<h4 id=\"架构cpu类型\"><a class=\"anchor\" href=\"#架构cpu类型\">#</a> 架构 (CPU 类型)</h4>\n<p>复杂型指令集：x86_64 主要是因特尔和 AMD 的 CPU (openEuler 没有 32 位操作系统)<br />\n 精简型指令集：aarchx64 主要是 ARM 的处理器，比如 kunpeng916</p>\n<h4 id=\"场景\"><a class=\"anchor\" href=\"#场景\">#</a> 场景</h4>\n<p>服务器：裸机 (服务器)、虚拟机<br />\n边缘计算：智能设备来进行优化后的安装包，也就是携带特定使用场景的软件<br />\n云计算：已经安装好操作系统模板的虚拟机镜像文件 (KVM 的 qcow2 模板)</p>\n<p>Offline Standard ISO 离线安装标准的 ISO (标准的离线包，也就是仅携带一些必要的系统软件)</p>\n<p>Offine Everything ISO 离线安装的完整 ISO (携带了操作系统所有产商开发的软件，完整的离线包)</p>\n<p>Network Install ISO 网络安装的 ISO, 该 ISO 文件仅能启动操作系统，不能进行安装，因为没有携带安装系统所必须的文件，所有安装系统用到的文件必须通过网络进行下载，因此如果服务器可以联网，则可以使用该安装项，否则不能使用</p>\n",
+            "tags": [
+                "ICT",
+                "华为大赛暑假集训营",
+                "ICT"
+            ]
+        },
+        {
             "id": "http://m3k0mi.github.io/2025/09/29/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A52/",
             "url": "http://m3k0mi.github.io/2025/09/29/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A52/",
             "title": "基础软件训练营2",

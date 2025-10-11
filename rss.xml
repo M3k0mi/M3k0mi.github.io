@@ -10,8 +10,86 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 29 Sep 2025 15:25:34 +0800</pubDate>
-        <lastBuildDate>Mon, 29 Sep 2025 15:25:34 +0800</lastBuildDate>
+        <pubDate>Fri, 10 Oct 2025 11:06:05 +0800</pubDate>
+        <lastBuildDate>Fri, 10 Oct 2025 11:06:05 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://m3k0mi.github.io/2025/10/10/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A55/</guid>
+            <title>基础软件训练营5</title>
+            <link>http://m3k0mi.github.io/2025/10/10/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A55/</link>
+            <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
+            <category term="华为大赛暑假集训营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%8D%8E%E4%B8%BA%E5%A4%A7%E8%B5%9B%E6%9A%91%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5/" />
+            <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
+            <pubDate>Fri, 10 Oct 2025 11:06:05 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;vmware&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vmware&#34;&gt;#&lt;/a&gt; VMware&lt;/h3&gt;
+&lt;h4 id=&#34;硬件兼容性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#硬件兼容性&#34;&gt;#&lt;/a&gt; 硬件兼容性&lt;/h4&gt;
+&lt;p&gt;相当于在购买电脑时的主板配置，即主板最多支持多大的内存和硬盘以及 CPU&lt;/p&gt;
+&lt;h4 id=&#34;安装操作系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装操作系统&#34;&gt;#&lt;/a&gt; 安装操作系统&lt;/h4&gt;
+&lt;p&gt;安装程序光盘映像文件，VMware 将自动安装操作系统，一般选稍后安装&lt;/p&gt;
+&lt;h4 id=&#34;选择客户机操作系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#选择客户机操作系统&#34;&gt;#&lt;/a&gt; 选择客户机操作系统&lt;/h4&gt;
+&lt;p&gt;根据选择项，来模拟适合该系统的硬件，openEuler 选择‘其他 Linuux5.x 内核 64 位’&lt;/p&gt;
+&lt;h4 id=&#34;处理器配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#处理器配置&#34;&gt;#&lt;/a&gt; 处理器配置&lt;/h4&gt;
+&lt;p&gt;数量指主板上 CPU 插槽，可以装多少块物理 CPU。每个处理器内核数指一个 CPU 多少核心&lt;/p&gt;
+&lt;h4 id=&#34;内存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内存&#34;&gt;#&lt;/a&gt; 内存&lt;/h4&gt;
+&lt;p&gt;内存分配建议 4G 以上，能完整流畅运行图形化&lt;/p&gt;
+&lt;h4 id=&#34;网络模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网络模式&#34;&gt;#&lt;/a&gt; 网络模式&lt;/h4&gt;
+&lt;p&gt;可以上网：桥接、NAT&lt;/p&gt;
+&lt;p&gt;不上网：仅主机&lt;/p&gt;
+&lt;p&gt;不创网卡：不使用网络连接&lt;/p&gt;
+&lt;h4 id=&#34;io控制器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#io控制器&#34;&gt;#&lt;/a&gt; I/O 控制器&lt;/h4&gt;
+&lt;p&gt;硬盘上的 IO 控制器，能更好的提升读写效率，通常服务器选择 lsi logic&lt;/p&gt;
+&lt;h4 id=&#34;硬盘类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#硬盘类型&#34;&gt;#&lt;/a&gt; 硬盘类型&lt;/h4&gt;
+&lt;p&gt;IDE-&amp;gt; 并口硬盘 体型大容量小&lt;/p&gt;
+&lt;p&gt;scsi/sata 硬盘 -&amp;gt; 串口硬盘 scsi 用在服务器，sata 用在 PC&lt;/p&gt;
+&lt;p&gt;NVME 固态卡 -&amp;gt; 通常所说的 m.2 固态硬盘&lt;/p&gt;
+&lt;h3 id=&#34;命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#命令&#34;&gt;#&lt;/a&gt; 命令&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--now&lt;/span&gt; cockpit.socket&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;开启 cockpit 的 web 控制台，--now 表示当前立即启动&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;systemctl disable &lt;span class=&#34;token parameter variable&#34;&gt;--now&lt;/span&gt; firewalld.service&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;关闭防火墙&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ifconfig&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查寻 ip 地址&lt;/p&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption data-lang=&#34;HTTP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token header&#34;&gt;&lt;span class=&#34;token header-name keyword&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token header-value&#34;&gt;//ip地址:9090&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;访问&lt;/p&gt;
+&lt;h3 id=&#34;ukui&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ukui&#34;&gt;#&lt;/a&gt; ukui&lt;/h3&gt;
+&lt;p&gt;来自麒麟的桌面应用&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;yum &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; ukui&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;安装 ukui 的包&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;systemctl set-default graphical.target&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;设置图形化启动&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;重启&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://m3k0mi.github.io/2025/10/09/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A54/</guid>
+            <title>基础软件训练营4</title>
+            <link>http://m3k0mi.github.io/2025/10/09/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A54/</link>
+            <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
+            <category term="华为大赛暑假集训营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%8D%8E%E4%B8%BA%E5%A4%A7%E8%B5%9B%E6%9A%91%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5/" />
+            <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
+            <pubDate>Thu, 09 Oct 2025 16:08:31 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;openeuler&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#openeuler&#34;&gt;#&lt;/a&gt; openEuler&lt;/h3&gt;
+&lt;h4 id=&#34;开源协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开源协议&#34;&gt;#&lt;/a&gt; 开源协议&lt;/h4&gt;
+&lt;p&gt;openEuler mulan（木兰宽松许可证）强制开源协议&lt;br /&gt;
+ CentOS GPL 协议开源 强制开源协议&lt;br /&gt;
+ MIT 麻省理工开源协议 商用领域最好的协议&lt;br /&gt;
+ apache liscense apache 基金会的开源协议&lt;/p&gt;
+&lt;p&gt;在国内最大的区别在于：A. 由社区驱动（开放原子基金会）B. 完全开源免费&lt;/p&gt;
+&lt;p&gt;openEuler 和 CentOs 没有从属关系，都是基于上游的 kernel 来进行构建的&lt;/p&gt;
+&lt;p&gt;openEuler 和 CentOS 很多命令一样，原因在于都是基于 RPM 包来构建的软件包，openEuler 使用了红帽开源的 RPM 包管理器，可以兼容 RPM 的软件包&lt;/p&gt;
+&lt;h4 id=&#34;openeuler的发行版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#openeuler的发行版本&#34;&gt;#&lt;/a&gt; openEuler 的发行版本&lt;/h4&gt;
+&lt;p&gt;从 2019 年底开源至今，仅有 3 个版本可以在生产环境使用，但是发布版本不只两个。&lt;br /&gt;
+第一个稳定版本 (LTS)：openEuler 20.03 LTS&lt;br /&gt;
+ 每 2 年发布一个长期支持版 openEuler 22.03 LTS、openEuler 24.03 LTS&lt;/p&gt;
+&lt;p&gt;sp: 操作系统服务包 sp1、sp2、sp3、sp4，通常下载最新的版本，服务包指操作系统在一段时间内对软件的 bug 和系统补丁做一个修复集合，用来进行推送更新&lt;/p&gt;
+&lt;p&gt;目前推荐 22.03 LTS sp4&lt;/p&gt;
+&lt;p&gt;社区发行版：是 openEuler 社区自主发行的原生版本&lt;br /&gt;
+商业发行版：是商业公司二次开发的版本&lt;/p&gt;
+&lt;h4 id=&#34;架构cpu类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#架构cpu类型&#34;&gt;#&lt;/a&gt; 架构 (CPU 类型)&lt;/h4&gt;
+&lt;p&gt;复杂型指令集：x86_64 主要是因特尔和 AMD 的 CPU (openEuler 没有 32 位操作系统)&lt;br /&gt;
+ 精简型指令集：aarchx64 主要是 ARM 的处理器，比如 kunpeng916&lt;/p&gt;
+&lt;h4 id=&#34;场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#场景&#34;&gt;#&lt;/a&gt; 场景&lt;/h4&gt;
+&lt;p&gt;服务器：裸机 (服务器)、虚拟机&lt;br /&gt;
+边缘计算：智能设备来进行优化后的安装包，也就是携带特定使用场景的软件&lt;br /&gt;
+云计算：已经安装好操作系统模板的虚拟机镜像文件 (KVM 的 qcow2 模板)&lt;/p&gt;
+&lt;p&gt;Offline Standard ISO 离线安装标准的 ISO (标准的离线包，也就是仅携带一些必要的系统软件)&lt;/p&gt;
+&lt;p&gt;Offine Everything ISO 离线安装的完整 ISO (携带了操作系统所有产商开发的软件，完整的离线包)&lt;/p&gt;
+&lt;p&gt;Network Install ISO 网络安装的 ISO, 该 ISO 文件仅能启动操作系统，不能进行安装，因为没有携带安装系统所必须的文件，所有安装系统用到的文件必须通过网络进行下载，因此如果服务器可以联网，则可以使用该安装项，否则不能使用&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://m3k0mi.github.io/2025/09/29/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A52/</guid>
             <title>基础软件训练营2</title>
