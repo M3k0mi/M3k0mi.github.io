@@ -10,8 +10,61 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 10 Oct 2025 11:06:05 +0800</pubDate>
-        <lastBuildDate>Fri, 10 Oct 2025 11:06:05 +0800</lastBuildDate>
+        <pubDate>Sat, 11 Oct 2025 15:02:21 +0800</pubDate>
+        <lastBuildDate>Sat, 11 Oct 2025 15:02:21 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://m3k0mi.github.io/2025/10/11/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A56/</guid>
+            <title>基础软件训练营6</title>
+            <link>http://m3k0mi.github.io/2025/10/11/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A56/</link>
+            <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
+            <category term="华为大赛暑假集训营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%8D%8E%E4%B8%BA%E5%A4%A7%E8%B5%9B%E6%9A%91%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5/" />
+            <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
+            <pubDate>Sat, 11 Oct 2025 15:02:21 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;linux目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#linux目录&#34;&gt;#&lt;/a&gt; linux 目录&lt;/h3&gt;
+&lt;h4 id=&#34;afs&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#afs&#34;&gt;#&lt;/a&gt; afs&lt;/h4&gt;
+&lt;p&gt;空目录，作为临时文件的临时挂载使用&lt;/p&gt;
+&lt;h4 id=&#34;bash_completiond&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bash_completiond&#34;&gt;#&lt;/a&gt; bash_completion.d&lt;/h4&gt;
+&lt;p&gt;系统自动生成&lt;/p&gt;
+&lt;h4 id=&#34;bin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bin&#34;&gt;#&lt;/a&gt; bin&lt;/h4&gt;
+&lt;p&gt;存放操作系统所有的命令，原路径 usr/bin&lt;/p&gt;
+&lt;h4 id=&#34;boot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#boot&#34;&gt;#&lt;/a&gt; boot&lt;/h4&gt;
+&lt;p&gt;操作系统启动引导分区目录，系统开机时加载的文件&lt;/p&gt;
+&lt;h4 id=&#34;dev&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dev&#34;&gt;#&lt;/a&gt; dev&lt;/h4&gt;
+&lt;p&gt;操作系统各种各样的设备文件，比如各种外接设备文件、分区文件，删除后重启依旧生成&lt;/p&gt;
+&lt;h4 id=&#34;etc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#etc&#34;&gt;#&lt;/a&gt; etc&lt;/h4&gt;
+&lt;p&gt;各种配置文件，系统配置和软件配置，比如主机名、网卡配置文件、防火墙配置、用户账号密码&lt;/p&gt;
+&lt;h4 id=&#34;home&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#home&#34;&gt;#&lt;/a&gt; home&lt;/h4&gt;
+&lt;p&gt;存放普通用户的 home 目录，root 单独一个目录&lt;/p&gt;
+&lt;h4 id=&#34;lib&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#lib&#34;&gt;#&lt;/a&gt; lib&lt;/h4&gt;
+&lt;p&gt;命令会引用的库文件&lt;/p&gt;
+&lt;h4 id=&#34;lostfound&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#lostfound&#34;&gt;#&lt;/a&gt; lost+found&lt;/h4&gt;
+&lt;p&gt;存储电脑意外关机的数据&lt;/p&gt;
+&lt;h4 id=&#34;mediamnt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mediamnt&#34;&gt;#&lt;/a&gt; media/mnt&lt;/h4&gt;
+&lt;p&gt;临时挂载使用，比如要使用光盘的文件，必须将其挂载&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;. /media&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;挂载到 media&lt;/p&gt;
+&lt;h4 id=&#34;opt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#opt&#34;&gt;#&lt;/a&gt; opt&lt;/h4&gt;
+&lt;p&gt;存放的都是用户下载的第三方文件的保存路径&lt;/p&gt;
+&lt;h4 id=&#34;proc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#proc&#34;&gt;#&lt;/a&gt; proc&lt;/h4&gt;
+&lt;p&gt;存放系统运行的数据，还有系统信息，文件名称都是进程 id，重启后会清空&lt;/p&gt;
+&lt;h4 id=&#34;root&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#root&#34;&gt;#&lt;/a&gt; root&lt;/h4&gt;
+&lt;p&gt;超级管理员的 home 目录&lt;/p&gt;
+&lt;h4 id=&#34;run&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run&#34;&gt;#&lt;/a&gt; run&lt;/h4&gt;
+&lt;p&gt;保存系统开机时的运行数据&lt;/p&gt;
+&lt;h4 id=&#34;sbin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sbin&#34;&gt;#&lt;/a&gt; sbin&lt;/h4&gt;
+&lt;p&gt;保存二进制可执行文件 -&amp;gt; 命令，只有超级管理员可以使用&lt;/p&gt;
+&lt;h4 id=&#34;srv&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#srv&#34;&gt;#&lt;/a&gt; srv&lt;/h4&gt;
+&lt;p&gt;空目录，一些变化的数据存储目录，比如 apache 的网页文件&lt;/p&gt;
+&lt;h4 id=&#34;sys&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sys&#34;&gt;#&lt;/a&gt; sys&lt;/h4&gt;
+&lt;p&gt;system，存储系统的相关配置，系统调优可能会修改&lt;/p&gt;
+&lt;h4 id=&#34;tmp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tmp&#34;&gt;#&lt;/a&gt; tmp&lt;/h4&gt;
+&lt;p&gt;软件运行时的临时文件&lt;/p&gt;
+&lt;h4 id=&#34;usr&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#usr&#34;&gt;#&lt;/a&gt; usr&lt;/h4&gt;
+&lt;p&gt;最重要，快捷方式的源文件路径&lt;br /&gt;
+ /usr/local，用户安装第三方软件的路径&lt;/p&gt;
+&lt;h4 id=&#34;var&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#var&#34;&gt;#&lt;/a&gt; var&lt;/h4&gt;
+&lt;p&gt;程序的默认日志文件、网页文件&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://m3k0mi.github.io/2025/10/10/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A55/</guid>
             <title>基础软件训练营5</title>

@@ -7,6 +7,18 @@
     "home_page_url": "http://m3k0mi.github.io",
     "items": [
         {
+            "id": "http://m3k0mi.github.io/2025/10/11/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A56/",
+            "url": "http://m3k0mi.github.io/2025/10/11/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A56/",
+            "title": "基础软件训练营6",
+            "date_published": "2025-10-11T07:02:21.000Z",
+            "content_html": "<h3 id=\"linux目录\"><a class=\"anchor\" href=\"#linux目录\">#</a> linux 目录</h3>\n<h4 id=\"afs\"><a class=\"anchor\" href=\"#afs\">#</a> afs</h4>\n<p>空目录，作为临时文件的临时挂载使用</p>\n<h4 id=\"bash_completiond\"><a class=\"anchor\" href=\"#bash_completiond\">#</a> bash_completion.d</h4>\n<p>系统自动生成</p>\n<h4 id=\"bin\"><a class=\"anchor\" href=\"#bin\">#</a> bin</h4>\n<p>存放操作系统所有的命令，原路径 usr/bin</p>\n<h4 id=\"boot\"><a class=\"anchor\" href=\"#boot\">#</a> boot</h4>\n<p>操作系统启动引导分区目录，系统开机时加载的文件</p>\n<h4 id=\"dev\"><a class=\"anchor\" href=\"#dev\">#</a> dev</h4>\n<p>操作系统各种各样的设备文件，比如各种外接设备文件、分区文件，删除后重启依旧生成</p>\n<h4 id=\"etc\"><a class=\"anchor\" href=\"#etc\">#</a> etc</h4>\n<p>各种配置文件，系统配置和软件配置，比如主机名、网卡配置文件、防火墙配置、用户账号密码</p>\n<h4 id=\"home\"><a class=\"anchor\" href=\"#home\">#</a> home</h4>\n<p>存放普通用户的 home 目录，root 单独一个目录</p>\n<h4 id=\"lib\"><a class=\"anchor\" href=\"#lib\">#</a> lib</h4>\n<p>命令会引用的库文件</p>\n<h4 id=\"lostfound\"><a class=\"anchor\" href=\"#lostfound\">#</a> lost+found</h4>\n<p>存储电脑意外关机的数据</p>\n<h4 id=\"mediamnt\"><a class=\"anchor\" href=\"#mediamnt\">#</a> media/mnt</h4>\n<p>临时挂载使用，比如要使用光盘的文件，必须将其挂载</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token function\">mount</span> <span class=\"token punctuation\">..</span>. /media</pre></td></tr></table></figure><p>挂载到 media</p>\n<h4 id=\"opt\"><a class=\"anchor\" href=\"#opt\">#</a> opt</h4>\n<p>存放的都是用户下载的第三方文件的保存路径</p>\n<h4 id=\"proc\"><a class=\"anchor\" href=\"#proc\">#</a> proc</h4>\n<p>存放系统运行的数据，还有系统信息，文件名称都是进程 id，重启后会清空</p>\n<h4 id=\"root\"><a class=\"anchor\" href=\"#root\">#</a> root</h4>\n<p>超级管理员的 home 目录</p>\n<h4 id=\"run\"><a class=\"anchor\" href=\"#run\">#</a> run</h4>\n<p>保存系统开机时的运行数据</p>\n<h4 id=\"sbin\"><a class=\"anchor\" href=\"#sbin\">#</a> sbin</h4>\n<p>保存二进制可执行文件 -&gt; 命令，只有超级管理员可以使用</p>\n<h4 id=\"srv\"><a class=\"anchor\" href=\"#srv\">#</a> srv</h4>\n<p>空目录，一些变化的数据存储目录，比如 apache 的网页文件</p>\n<h4 id=\"sys\"><a class=\"anchor\" href=\"#sys\">#</a> sys</h4>\n<p>system，存储系统的相关配置，系统调优可能会修改</p>\n<h4 id=\"tmp\"><a class=\"anchor\" href=\"#tmp\">#</a> tmp</h4>\n<p>软件运行时的临时文件</p>\n<h4 id=\"usr\"><a class=\"anchor\" href=\"#usr\">#</a> usr</h4>\n<p>最重要，快捷方式的源文件路径<br />\n /usr/local，用户安装第三方软件的路径</p>\n<h4 id=\"var\"><a class=\"anchor\" href=\"#var\">#</a> var</h4>\n<p>程序的默认日志文件、网页文件</p>\n",
+            "tags": [
+                "ICT",
+                "华为大赛暑假集训营",
+                "ICT"
+            ]
+        },
+        {
             "id": "http://m3k0mi.github.io/2025/10/10/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A55/",
             "url": "http://m3k0mi.github.io/2025/10/10/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A55/",
             "title": "基础软件训练营5",
