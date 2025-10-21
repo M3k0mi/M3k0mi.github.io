@@ -8,12 +8,216 @@
     <author>
       <name>M3k0mi</name>
     </author>
-    <updated>2025-10-18T05:28:39.000Z</updated>
+    <updated>2025-10-21T06:15:54.000Z</updated>
+    <entry>
+        <id>http://m3k0mi.github.io/2025/10/21/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A59/</id>
+        <title>基础软件训练营9</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2025/10/21/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A59/"/>
+        <content type="html"></content>
+        <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
+        <category term="华为大赛暑假集训营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%8D%8E%E4%B8%BA%E5%A4%A7%E8%B5%9B%E6%9A%91%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5/" />
+        <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
+        <updated>2025-10-21T06:15:54.000Z</updated>
+    </entry>
     <entry>
         <id>http://m3k0mi.github.io/2025/10/18/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A58/</id>
         <title>基础软件训练营8</title>
         <link rel="alternate" href="http://m3k0mi.github.io/2025/10/18/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A58/"/>
         <content type="html">&lt;h3 id=&#34;三大特殊权限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三大特殊权限&#34;&gt;#&lt;/a&gt; 三大特殊权限&lt;/h3&gt;
+&lt;h4 id=&#34;suid&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#suid&#34;&gt;#&lt;/a&gt; suid&lt;/h4&gt;
+&lt;p&gt;对于文件：如果一个文件拥有 suid 权限，那么再执行这个文件的时候会以文件拥有人的身份执行，只有二进制可执行文件有效果，脚本文件没有任何效果&lt;/p&gt;
+&lt;p&gt;对目录：目录赋予 suid 权限没有任何意义&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ll 文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;pre&gt;&lt;code class=&#34;language-b&#34;&gt;ll -d 目录
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看是否有 suid 权限，拥有人栏位 x 变成 s 则拥有，拥有人对文件没有 x 权限，则为大写 S&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; u+s 文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; 4xxx 文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;赋予 suid 权限&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; u-s 文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; 0xxx 文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;删除 suid 权限&lt;/p&gt;
+&lt;h4 id=&#34;sgid&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sgid&#34;&gt;#&lt;/a&gt; sgid&lt;/h4&gt;
+&lt;p&gt;对于文件：如果一个文件拥有 sgid 权限，再执行这个文件的时候会以文件的拥有组身份去执行&lt;/p&gt;
+&lt;p&gt;对于目录：一个目录如果具有 sgid 权限，则这个目录下所有文件都会继承这个目录的拥有组&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; g+s 目录名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; 2xxx 目录名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;赋予目录 sgid 权限&lt;/p&gt;
+&lt;h4 id=&#34;stickysbit&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#stickysbit&#34;&gt;#&lt;/a&gt; sticky(sbit)&lt;/h4&gt;
+&lt;p&gt;粘性权限&lt;br /&gt;
+对于文件：没有意义&lt;br /&gt;
+对于目录：如果一个目录拥有 sbit 权限，则这个目录，自己创建的文件才能修改和重命名&lt;/p&gt;
+&lt;p&gt;其他的的 x 权限变成 t&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; o+t 文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; 1xxx 文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;赋予 sbit 权限&lt;/p&gt;
+&lt;h3 id=&#34;软件包管理和服务管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件包管理和服务管理&#34;&gt;#&lt;/a&gt; 软件包管理和服务管理&lt;/h3&gt;
+&lt;p&gt;openEuler 系统，基于 RHEL 的发行版本&lt;br /&gt;
+基于 debian 的发行版本&lt;/p&gt;
+&lt;p&gt;软件包管理方式不一样&lt;/p&gt;
+&lt;p&gt;RHEL: 基于 rpm 包进行管理&lt;/p&gt;
+&lt;p&gt;openEuler 系统，软件包格式是 rpm 包，软甲包的后缀通常来说是 rpm&lt;/p&gt;
+&lt;p&gt;rpm:redhat package management 红帽包管理器&lt;/p&gt;
+&lt;h4 id=&#34;获取rpm包途径&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#获取rpm包途径&#34;&gt;#&lt;/a&gt; 获取 rpm 包途径&lt;/h4&gt;
+&lt;p&gt;1.openEuler 官网&lt;br /&gt;
+ 2. 上国内开源镜像站&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; 下载地址&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;rpm管理工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#rpm管理工具&#34;&gt;#&lt;/a&gt; rpm 管理工具&lt;/h4&gt;
+&lt;p&gt;1. 安装、卸载和重装&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rpm&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-ivh&lt;/span&gt; 软件文件名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;-i install&lt;br /&gt;
+-v 显示详细信息&lt;br /&gt;
+ - h 显示进度条&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rpm&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; 软件包名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;删除软件&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rpm&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-q&lt;/span&gt; 软件包名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查询&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rpm&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-U&lt;/span&gt; 软件包名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;升级软件包&lt;/p&gt;
+&lt;p&gt;-U 如果软件存在则升级，如果不存在则安装&lt;br /&gt;
+ - F 如果软件存在则升级，如果不存在则报错&lt;br /&gt;
+升级软件包，并且可以在线升级&lt;/p&gt;
+&lt;p&gt;重新安装软件包&lt;/p&gt;
+&lt;p&gt;--reinstall&lt;/p&gt;
+&lt;p&gt;2. 查询&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;选项&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-q  &amp;lt;包名&amp;gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查询软件是否安装&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-qa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出当前系统上所有已经安装的软件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-qi&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查询软件包的信息 (包括源包是什么，在哪里可以下载，在哪里可以查询帮助以及软件包简单的描述)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-ql &amp;lt;包名&amp;gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出软件包会释放的文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-qc &amp;lt;包名&amp;gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出软件包释放的配置文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-qd &amp;lt;包名&amp;gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出软件包的帮助文档&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;--changelog&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查看软件的变更日志&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-qf&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查询文件的来源软件包&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;配置yum仓库步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置yum仓库步骤&#34;&gt;#&lt;/a&gt; 配置 yum 仓库步骤&lt;/h4&gt;
+&lt;h5 id=&#34;本地仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#本地仓库&#34;&gt;#&lt;/a&gt; 本地仓库&lt;/h5&gt;
+&lt;p&gt;存放到 iso 镜像文件&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler ~&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# lsblk&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;NAME               MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sda                  &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;:0    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;   20G  &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; disk &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├─sda1               &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;:1    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;    1G  &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; part /boot&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;└─sda2               &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;:2    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;   19G  &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; part &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ├─openeuler-root &lt;span class=&#34;token number&#34;&gt;253&lt;/span&gt;:0    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;   17G  &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; lvm  /&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  └─openeuler-swap &lt;span class=&#34;token number&#34;&gt;253&lt;/span&gt;:1    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;    2G  &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; lvm  &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;SWAP&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sr0                 &lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt;:0    &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;.8G  &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; rom&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;列出系统中所有可用的块设备信息&lt;/p&gt;
+&lt;p&gt;sr0 其实就是 /dev/sr0 设备，就是添加的光驱设备&lt;/p&gt;
+&lt;p&gt;1. 将光驱挂载给目录，作为光驱的访问入口&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler ~&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# mount /dev/sr0 /media&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mount: /media: WARNING: &lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; write-protected, mounted read-only.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;2. 修改 yum 配置文件，指向 yum 仓库&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#备份原来的配置文件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler media&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# cd /etc/yum.repos.d/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler yum.repos.d&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# ll&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;总用量 &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;-rw-r--r--. &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; root root &lt;span class=&#34;token number&#34;&gt;2685&lt;/span&gt;  &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;27&lt;/span&gt;  &lt;span class=&#34;token number&#34;&gt;2024&lt;/span&gt; openEuler.repo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler yum.repos.d&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# mv openEuler.repo openEuler.repo.bak&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#创建 dvd.repo 配置文件，一定要在 /etc/yum.repos.d 目录下，后缀为.repo&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler yum.repos.d&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# vim dvd.repo&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;openEuler&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;	&lt;span class=&#34;token comment&#34;&gt;#仓库名字&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;openEuler	&lt;span class=&#34;token comment&#34;&gt;#仓库描述信息&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;baseurl&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;file:///media	&lt;span class=&#34;token comment&#34;&gt;#仓库地址 (file:// 表示是本地仓库，ftp:// 或者 http:// 表示是一个网络仓库) repodata 的上级目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;gpgcheck&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;	&lt;span class=&#34;token comment&#34;&gt;#安装软件包是否校验 1 校验 0 不校验&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;gpgkey&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;file://media/RPM-GPG-KEY-openEuler	&lt;span class=&#34;token comment&#34;&gt;#公钥文件路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;enable&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;	&lt;span class=&#34;token comment&#34;&gt;#是否开启仓库 1 开启 0 不开启&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;~&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 执行 yum 命令测试&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler yum.repos.d&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# yum clean all&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;49&lt;/span&gt; files removed&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;root@openEuler yum.repos.d&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;# yum makecache&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;openEuler                                                                                 &lt;span class=&#34;token number&#34;&gt;87&lt;/span&gt; MB/s &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3.4&lt;/span&gt; MB     00:00    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Last metadata expiration check: &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;:00:01 ago on &lt;span class=&#34;token number&#34;&gt;2025&lt;/span&gt;年10月19日 星期日 &lt;span class=&#34;token number&#34;&gt;15&lt;/span&gt;时35分57秒.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Metadata cache created.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;如果 yum 仓库配置有问题，.repo 配置文件有错误，yum makecache 会失败&lt;/p&gt;
+&lt;p&gt;一个 yum 的配置文件中可以有多个仓库&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;命令选项&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum install&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;安装，依赖也安装&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum remove&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;卸载，依赖也卸载&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum reinstall&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;重装&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum update&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;更新&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum list&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出仓库中所有包&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum repolist&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出启用仓库&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum repolist all&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出所有仓库&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum info&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查询软件包的信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum history&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查看 yum 的历史&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum history undo&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;撤销某一次历史记录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum grouplist&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;列出软件包组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum groupinstall&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;安装软件包组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum groupupdate&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;更新软件包组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum group info&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查看软件包组信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;dnf 和 yum 一样&lt;/p&gt;
+&lt;h4 id=&#34;部署yum仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#部署yum仓库&#34;&gt;#&lt;/a&gt; 部署 yum 仓库&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;主机名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;网络地址&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;角色&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum_computer&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;192.168.2.146&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum 服务器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;yum_client&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;192.168.2.147&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内部节点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;yum_computer操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#yum_computer操作&#34;&gt;#&lt;/a&gt; yum_computer 操作&lt;/h5&gt;
+&lt;p&gt;1. 安装 httpd 软件，前提是配置好了本地仓库&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;yum &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; httpd &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;2. 关闭防火墙&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;systemctl disable &lt;span class=&#34;token parameter variable&#34;&gt;--now&lt;/span&gt; firewalld&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;setenforce &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sed&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-i&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;s/SELINUX=enforcing/SELINUX=disabled/&#39;&lt;/span&gt; /etc/selinux/config&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 开启 httpd 服务&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--now&lt;/span&gt; httpd&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;4. 在 /var/www/html/ 目录下创建一个 iso 目录&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; /var/www/html/iso&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;5. 将 nfs-utlis 的 rpm 包下载到上面的目录&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;yum &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; nfs-utlis &lt;span class=&#34;token parameter variable&#34;&gt;--downloadonly&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--downloaddir&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/var/www/html/iso &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;6. 安装 createrepo 工具，目的是为了建立包和包的依赖关系表&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;yum &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; createrepo &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h5 id=&#34;yum_client操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#yum_client操作&#34;&gt;#&lt;/a&gt; yum_client 操作&lt;/h5&gt;
+&lt;p&gt;1. 备份 /etc/yum.repos.d 目录下的文件&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /etc/yum.repos.d&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mv&lt;/span&gt; openEuler.repo openEuler.repo.bak&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;2. 修改 yum 配置文件&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; dvd.repo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;repo&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;repodtiory&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;baseurl&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;http://192.168.2.146&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;gpgcheck&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;yum clean all&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;yum makecache&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 安装 nfs-utlis 软甲包&lt;/p&gt;
 </content>
         <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
         <category term="华为大赛暑假集训营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%8D%8E%E4%B8%BA%E5%A4%A7%E8%B5%9B%E6%9A%91%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5/" />
