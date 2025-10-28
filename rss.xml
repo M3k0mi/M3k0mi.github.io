@@ -20,7 +20,116 @@
             <category term="华为大赛暑假集训营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%8D%8E%E4%B8%BA%E5%A4%A7%E8%B5%9B%E6%9A%91%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5/" />
             <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
             <pubDate>Tue, 21 Oct 2025 14:15:54 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
+            <description><![CDATA[ &lt;h3 id=&#34;磁盘管理-文件系统-逻辑卷&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#磁盘管理-文件系统-逻辑卷&#34;&gt;#&lt;/a&gt; 磁盘管理、文件系统、逻辑卷&lt;/h3&gt;
+&lt;p&gt;分区的好处&lt;/p&gt;
+&lt;p&gt;1. 每个分区都可以创建不同的文件系统&lt;br /&gt;
+ 2. 每个分区是独立的，分区故障不影响其他分区&lt;br /&gt;
+ 3. 分区可以实现文件的区分，不同的分区保存的内容不一样，方便管理&lt;/p&gt;
+&lt;p&gt;linux 必须要进行分区&lt;br /&gt;
+ 1./boot 分区，存储系统开机引导的文件&lt;br /&gt;
+ 2./ 分区&lt;/p&gt;
+&lt;p&gt;分区方案&lt;br /&gt;
+ MBR 方案&lt;br /&gt;
+特点：&lt;br /&gt;
+1. 如果磁盘单个分区超过 2TB，BMR 分区方案不支持&lt;br /&gt;
+ 2.MBR 方案有分区类型区分，有主分区、扩展分区、逻辑分区 (在扩展分区内划分的)，最多支持 3 给主分区 1 个扩展分区&lt;/p&gt;
+&lt;p&gt;GPT 方案&lt;br /&gt;
+特点：&lt;br /&gt;
+1. 磁盘单个分区可以超过 2TB&lt;br /&gt;
+2.GPT 分区方案实际上没有限制数量，128 个主分区 (实际上是操作系统的限制)&lt;/p&gt;
+&lt;p&gt;默认都是 GPT 分区方案&lt;/p&gt;
+&lt;h4 id=&#34;磁盘管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#磁盘管理&#34;&gt;#&lt;/a&gt; 磁盘管理&lt;/h4&gt;
+&lt;h5 id=&#34;分区工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分区工具&#34;&gt;#&lt;/a&gt; 分区工具&lt;/h5&gt;
+&lt;p&gt;parted: 支持非交互式分区，支持 MBR 和 GPT 分区方案，支持在脚本中使用 parted 来对磁盘分分区&lt;/p&gt;
+&lt;p&gt;fdisk&lt;/p&gt;
+&lt;p&gt;gdisk: 专门对 GPT 分区方案进行分区&lt;/p&gt;
+&lt;p&gt;parted 交互式分区&lt;/p&gt;
+&lt;h5 id=&#34;根据名称判断磁盘类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#根据名称判断磁盘类型&#34;&gt;#&lt;/a&gt; 根据名称判断磁盘类型&lt;/h5&gt;
+&lt;h6 id=&#34;scsisata硬盘&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#scsisata硬盘&#34;&gt;#&lt;/a&gt; scsi/sata 硬盘&lt;/h6&gt;
+&lt;p&gt;/dev/sda	第一块 scsi 硬盘&lt;br /&gt;
+ /dev/sda1	第一块 scsi 硬盘的第一个分区&lt;br /&gt;
+ /dev/sda2	第一块 scsi 硬盘的第二个分区&lt;br /&gt;
+ /dev/sdb	第二块 scsi 硬盘&lt;br /&gt;
+ /dev/sdc	第三块 scsi 硬盘&lt;/p&gt;
+&lt;h6 id=&#34;虚拟磁盘虚拟机上的磁盘kvm虚拟机&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#虚拟磁盘虚拟机上的磁盘kvm虚拟机&#34;&gt;#&lt;/a&gt; 虚拟磁盘 (虚拟机上的磁盘 kvm 虚拟机)&lt;/h6&gt;
+&lt;p&gt;/dev/vda&lt;br /&gt;
+/dev/vdb&lt;/p&gt;
+&lt;h6 id=&#34;xen虚拟化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xen虚拟化&#34;&gt;#&lt;/a&gt; xen 虚拟化&lt;/h6&gt;
+&lt;p&gt;/dev/xvda&lt;br /&gt;
+/dev/xvdb&lt;/p&gt;
+&lt;h6 id=&#34;nvme固态卡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nvme固态卡&#34;&gt;#&lt;/a&gt; nvme 固态卡&lt;/h6&gt;
+&lt;p&gt;/dev/nvme0n1&lt;br /&gt;
+/dev/nvme0n1p1&lt;br /&gt;
+/dev/nvme0n2&lt;/p&gt;
+&lt;h5 id=&#34;parted回车立即生效无需保存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#parted回车立即生效无需保存&#34;&gt;#&lt;/a&gt; parted (回车立即生效，无需保存)&lt;/h5&gt;
+&lt;p&gt;msdos 为 MBR 分区方案&lt;br /&gt;
+ gpt 为 GPT 分区方案&lt;/p&gt;
+&lt;p&gt;一块磁盘只能由一种分区方案&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;parted&lt;/span&gt; /dev/sdb &lt;span class=&#34;token comment&#34;&gt;#创建分区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mklable msdos	&lt;span class=&#34;token comment&#34;&gt;#指定分区方案&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mkpart primary xfs 1MIB 1024MIB &lt;span class=&#34;token comment&#34;&gt;#创建主分区，文件类型为 xfs，1MIB 开始，1024MIB 结束&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rm&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#删除 number 为 1 的分区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mklable gpt &lt;span class=&#34;token comment&#34;&gt;#创建 gpt 分区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mkpart p1 xfs 1MIB 1024MIB &lt;span class=&#34;token comment&#34;&gt;#创建名字为 p1 的分区，文件类型为 xfs，1MIB 开始，1024MIB 结束&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h5 id=&#34;parted非交互式分区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#parted非交互式分区&#34;&gt;#&lt;/a&gt; parted 非交互式分区&lt;/h5&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;parted&lt;/span&gt; /dev/sdb mklable msdos mkpart primary xfs 1MIB 1024MIB&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;存在分区方案则不需要 mklable&lt;/p&gt;
+&lt;h5 id=&#34;fdisk&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#fdisk&#34;&gt;#&lt;/a&gt; fdisk&lt;/h5&gt;
+&lt;p&gt;开始扇区不写，只写扇区大小，+1G 表示大小 1G&lt;/p&gt;
+&lt;h4 id=&#34;文件系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件系统&#34;&gt;#&lt;/a&gt; 文件系统&lt;/h4&gt;
+&lt;p&gt;文件系统是文件在硬盘上的存储方式和组织结构 --&amp;gt; 文件是存储到文件系统上的，文件系统是在磁盘上创建的&lt;/p&gt;
+&lt;p&gt;windows 主流文件系统 NTFS&lt;br /&gt;
+linux 主流文件系统 xfs,ext&lt;/p&gt;
+&lt;p&gt;创建文件系统 --&amp;gt; 格式化&lt;/p&gt;
+&lt;p&gt;新的文件系统会覆盖旧的文件系统导致文件丢失 (格式化就是在创建文件系统)&lt;/p&gt;
+&lt;h5 id=&#34;挂载linux系统独有概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#挂载linux系统独有概念&#34;&gt;#&lt;/a&gt; 挂载 (linux 系统独有概念)&lt;/h5&gt;
+&lt;p&gt;将文件系统挂载给某个目录，这个目录就称之为挂载点&lt;br /&gt;
+往挂载点中写数据，实际上就是先写入到对应的文件系统中&lt;/p&gt;
+&lt;h6 id=&#34;mount&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mount&#34;&gt;#&lt;/a&gt; mount&lt;/h6&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; /dev/sdb1 /data1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;将 /dev/sdb1 挂载到 /data1 目录&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;umount&lt;/span&gt; /data1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;卸载&lt;/p&gt;
+&lt;p&gt;临时挂载，重启系统会失效，但是不会丢失文件&lt;/p&gt;
+&lt;p&gt;永久挂载需要写入 /etc/fstab 文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;blkid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看文件系统 UUID&lt;/p&gt;
+&lt;h4 id=&#34;逻辑卷&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#逻辑卷&#34;&gt;#&lt;/a&gt; 逻辑卷&lt;/h4&gt;
+&lt;p&gt;LV 逻辑卷&lt;/p&gt;
+&lt;p&gt;LVM 逻辑卷管理&lt;br /&gt;
+对磁盘的机制的灵活管控，支持在线扩容：文件系统在使用的情况下，无需接在即可扩容&lt;/p&gt;
+&lt;h5 id=&#34;创建逻辑卷&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建逻辑卷&#34;&gt;#&lt;/a&gt; 创建逻辑卷&lt;/h5&gt;
+&lt;p&gt;1. 创建物理卷&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pvcreate /dev/sdb /dev/sdc /dev/sdd&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pvs&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查看物理卷&lt;/p&gt;
+&lt;p&gt;2. 创建卷组&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgcreate vg01 /dev/sdb /dev/sdc /dev/sdd&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;创建，名为 vg01 的卷组&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgs&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查看卷组&lt;/p&gt;
+&lt;p&gt;3. 创建逻辑卷&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;lvcreate &lt;span class=&#34;token parameter variable&#34;&gt;-n&lt;/span&gt; lv1 &lt;span class=&#34;token parameter variable&#34;&gt;-L&lt;/span&gt; 5G vg01&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;创建名为 lv1 大小 5G，从 vg01 分配的逻辑卷&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;lvdisplay&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;4. 创建文件系统和挂载&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mkfs&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-t&lt;/span&gt; xfs /dev/vg01/lv1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;创建文件系统为 xfs&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;blkid&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; /lv1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; /dev/vg01/lv1 /lv1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;将 lv1 挂载到 /lv1 目录下&lt;/p&gt;
+&lt;h5 id=&#34;lv逻辑卷扩容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#lv逻辑卷扩容&#34;&gt;#&lt;/a&gt; LV 逻辑卷扩容&lt;/h5&gt;
+&lt;p&gt;1. 检查 lv 所在卷组空间是否足够&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgs&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;2. 扩容逻辑卷&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;lvextend &lt;span class=&#34;token parameter variable&#34;&gt;-L&lt;/span&gt; 10G /dev/vg01/lv1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;将 lv1 扩容到 10G&lt;/p&gt;
+&lt;p&gt;3. 扩容文件系统&lt;/p&gt;
+&lt;p&gt;不同文件系统，扩容命令不同&lt;/p&gt;
+&lt;p&gt;xfs&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;xfs_growfs /dev/mapper/vg01-lv1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;ext:resize2fs&lt;/p&gt;
+&lt;h5 id=&#34;卷组扩容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卷组扩容&#34;&gt;#&lt;/a&gt; 卷组扩容&lt;/h5&gt;
+&lt;p&gt;1. 创建物理卷&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pvcreate /dev/sde&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;2. 加入卷组&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgextend vg01 /dev/sde&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h5 id=&#34;删除逻辑卷&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除逻辑卷&#34;&gt;#&lt;/a&gt; 删除逻辑卷&lt;/h5&gt;
+&lt;p&gt;1. 卸载文件系统&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;umount&lt;/span&gt; /lv1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;2. 删除逻辑卷&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;lvremove /dev/vg01/lv1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3. 删除卷组&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgremove /dev/vg01&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;4. 删除物理卷&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pvremove /dev/sdb /dev/sdv /dev/sdd&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h5 id=&#34;跨主机迁移逻辑卷&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#跨主机迁移逻辑卷&#34;&gt;#&lt;/a&gt; 跨主机迁移逻辑卷&lt;/h5&gt;
+&lt;p&gt;1. 卸载文件系统&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;umount&lt;/span&gt; /mnt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;2. 禁用卷组，防止他人将逻辑卷继续挂载&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgchange &lt;span class=&#34;token parameter variable&#34;&gt;-an&lt;/span&gt; vg01&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 将卷组信息到处到硬盘&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgexport vg01&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;/etc/lvm/backup&lt;/p&gt;
+&lt;p&gt;4. 将节点关机，拔出硬盘&lt;/p&gt;
+&lt;p&gt;5. 将硬盘插入到其他节点上&lt;/p&gt;
+&lt;p&gt;6. 导入卷组和激活卷组&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgimport vg01&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;7. 激活卷组&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vgchange &lt;span class=&#34;token parameter variable&#34;&gt;-ay&lt;/span&gt; vg01&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;8. 挂载测试&lt;/p&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://m3k0mi.github.io/2025/10/18/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A58/</guid>
