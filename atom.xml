@@ -8,7 +8,212 @@
     <author>
       <name>M3k0mi</name>
     </author>
-    <updated>2025-10-21T06:15:54.000Z</updated>
+    <updated>2025-11-05T13:14:15.000Z</updated>
+    <entry>
+        <id>http://m3k0mi.github.io/2025/11/05/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E9%A2%98%E7%9B%AE/</id>
+        <title>基础软件题目</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2025/11/05/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E9%A2%98%E7%9B%AE/"/>
+        <content type="html">&lt;p&gt;at 命令用于安排一次性任务&lt;br /&gt;
+ crontab 命令用于设置周期性的定时任务&lt;br /&gt;
+ jobs 命令用于管理当前 shell 中的后台作业&lt;/p&gt;
+&lt;p&gt;openEuler 系统启动过程硬件自检 -&amp;gt; 系统引导 -&amp;gt; 启动内核 -&amp;gt; 初始化系统&lt;/p&gt;
+&lt;p&gt;SSH 服务必要组成部分 openssh、openssh-server、openssh-clients&lt;br /&gt;
+openssh: 提供部分配置文件、说明文档，生成公钥的命令等&lt;br /&gt;
+ openssh-server: 用于启动 sshd 守护进程，提供 SSH 服务端的配置文件等&lt;br /&gt;
+ openssh-clients: 提供 ssh、scp、sfp 等客户端命令，提供 SSH 客户端配置文件等&lt;br /&gt;
+ openssh-askpass: 在桌面环境中，提供 ssh 连接时的交互对话框&lt;/p&gt;
+&lt;p&gt;openEuler 创建后台执行进程符号 &amp;amp;&lt;br /&gt;
+| 管道符，将上条命令的输出作为下条命令的输入&lt;/p&gt;
+&lt;p&gt;设置进程优先级 renice&lt;br /&gt;
+nice-n 10 program: 启动进程时，设置进程优先级&lt;br /&gt;
+ renice 优先级已启动的程序的 PID&lt;br /&gt;
+ 注意：可调整的优先级的范围为 - 20~19&lt;/p&gt;
+&lt;p&gt;cat /etc/os-release 可用于查看系统版本&lt;br /&gt;
+ lscpu 命令可用于查看 CPU 型号、数量、频率&lt;br /&gt;
+ lspci 命令可用于查看系统硬件信息&lt;br /&gt;
+ cat /etc/fstab 可用于查看系统在启动时需要自动挂载的磁盘分区和存储设备的信息。&lt;/p&gt;
+&lt;p&gt;systemctl 的功能：设置服务开机启动，启动、停止、重启服务，重启、关闭系统&lt;/p&gt;
+&lt;p&gt;chgrp 对文件或目录的所属组进行更改&lt;br /&gt;
+配置文件权限:chmod&lt;br /&gt;
+ 修改文件所有者:chown&lt;br /&gt;
+ 指定创建文件时的权限掩码:umask 掩码值&lt;/p&gt;
+&lt;p&gt;openEuler 内置变量&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表示当前脚本的文件名或路径&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$n
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表示 shell 程序的第 n 个位置参数值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表示 shell 程序所有的位置参数组成的字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$#
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表示 shell 程序的位置参数个数&lt;/p&gt;
+&lt;p&gt;在安装 openEuler 时，当进入安装界面后，可以设置网络和主机名、时间日期、软件选择&lt;/p&gt;
+&lt;p&gt;cat/proc/cpuinfo 查看 cpu 信息&lt;br /&gt;
+ cat/proc/swaps 查看 swap 信息&lt;br /&gt;
+ df -lh 查看硬盘信息&lt;br /&gt;
+ du 查看文件或目录大小&lt;/p&gt;
+&lt;p&gt;mount 命令可以挂载文件系统，也可以查看挂载信息&lt;/p&gt;
+&lt;p&gt;Linux 的文件系统是一颗目录树&lt;/p&gt;
+&lt;p&gt;mkdir 创建目录时，其父目录不存在时先创建目录的选项是 - p&lt;/p&gt;
+&lt;p&gt;vim 编辑器三种模式：一般模式、编辑模式、指令模式&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cat&lt;/span&gt; f1.txt&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;f2.txt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;将 f1.txt 复制为 f2.txt&lt;/p&gt;
+&lt;p&gt;用户可以通过修改 yum 配置文件指定 yum 源&lt;/p&gt;
+&lt;p&gt;tac 将内容反转输出&lt;br /&gt;
+ sort 排序&lt;/p&gt;
+&lt;p&gt;openEuler 22.03 LTS planned EOL 时间：2024/03&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;free -m
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看内存使用情况，输出以 MB 为单位&lt;/p&gt;
+&lt;p&gt;vim&lt;br /&gt;
+/2023：自上而下查找&lt;br /&gt;
+？2023：自下而上查找&lt;/p&gt;
+&lt;p&gt;创建文件的默认权限是 644&lt;br /&gt;
+ 创建目录的默认权限是 755&lt;br /&gt;
+ 默认权限掩码是 022&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl enable rpcbind.serbice
+systemctl enable nfs.serbice
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置 nfs 服务开机自启动&lt;/p&gt;
+&lt;p&gt;fg：将一个在后台暂停的作业恢复，并将其带到前台继续执行&lt;br /&gt;
+ bg：将一个在后台暂停的作业恢复，并将其带到后台继续执行&lt;/p&gt;
+&lt;p&gt;vim 在命令模式下:x 可以保存修改并退出 (shift+zz)&lt;/p&gt;
+&lt;p&gt;SELLinux 是一种强制访问安全机制，是基于 Linux LSM 框架开发的&lt;/p&gt;
+&lt;p&gt;openGauss 支持的备份与恢复类型&lt;br /&gt;
+逻辑备份与恢复&lt;br /&gt;
+物理备份与恢复&lt;br /&gt;
+闪回恢复&lt;/p&gt;
+&lt;p&gt;在 openGauss 数据库的 pg) hba.conf 配置文件中，有效的连接数据库类型有&lt;br /&gt;
+ local&lt;br /&gt;
+host&lt;br /&gt;
+hostssl&lt;/p&gt;
+&lt;p&gt;数据库事务 aicd&lt;br /&gt;
+Automicity - 原子性&lt;br /&gt;
+事务要么全部成功，要么全部失败&lt;br /&gt;
+ Consistency - 一致性&lt;br /&gt;
+事务在执行前后，数据库都必须从一个一致性状态转变到另一个一致性状态。&lt;br /&gt;
+Isolation - 隔离性&lt;br /&gt;
+并发事务互不干扰&lt;br /&gt;
+ Durability - 持久性&lt;br /&gt;
+一旦提交，永久保存&lt;/p&gt;
+&lt;p&gt;openGauss 表空间的优点&lt;br /&gt;
+可根据数据特性选择不同磁盘&lt;br /&gt;
+可设定表空间容量上限&lt;br /&gt;
+表空间对应于一个文件系统目录，且用户需要拥有读写执行的空目录&lt;br /&gt;
+表空间允许管理员根据数据库对象的使用模式安排数据位置，从而提高性能&lt;/p&gt;
+&lt;p&gt;sql 语句中使用！= 或 &amp;lt;&amp;gt; 操作符、NULL 值判断、or 连接以及参数隐式转换，会降低查询性能&lt;/p&gt;
+&lt;p&gt;DDL:create、alter、drop、truncate&lt;br /&gt;
+DML:insert、update、delete&lt;br /&gt;
+DCL:grant、revoke&lt;br /&gt;
+DQL:select&lt;/p&gt;
+&lt;p&gt;闪回技术，恢复已提交的数据库修改前的数据，只需要秒级，而且恢复速度与数据库大小无关&lt;/p&gt;
+&lt;p&gt;每个触发器只能与一个表和一个特定的事件相关联&lt;/p&gt;
+&lt;p&gt;管理好权限周期，及时使用 revoke 回收不需要的权限&lt;/p&gt;
+&lt;p&gt;lsof 查看系统打开的文件&lt;/p&gt;
+&lt;p&gt;/etc/fstab 中配置项 &amp;quot;/dev/sda1 /ext4 defaults,noatime 0 1”&lt;br /&gt;
+ 要挂载的块设备&lt;br /&gt;
+挂载点&lt;br /&gt;
+文件系统类型&lt;br /&gt;
+挂载选项&lt;br /&gt;
+ dump 备份标志 (0 不备份，1 备份)&lt;br /&gt;
+ 文件系统检查顺序 (0 不检查 1 优先检查 2 次要检查)&lt;/p&gt;
+&lt;p&gt;openeuler 中每个磁盘的主分区最多 4 个&lt;/p&gt;
+&lt;p&gt;软链接不能跨文件系统&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo $shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看当前登录用户默认 shell&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo $path
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;显示当前 path 环境变量的值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo /etc/shells
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;显示系统中所有可用的合法 shell 列表&lt;/p&gt;
+&lt;p&gt;vim&lt;br /&gt;
+u 撤销最后一次操作&lt;br /&gt;
+ G 快读移动光标到文件尾部&lt;br /&gt;
+:set nu 显示行号&lt;br /&gt;
+：1,5s/word1/word2/g 将文档中 1-5 行的 word1 全部换成 word2&lt;/p&gt;
+&lt;p&gt;touch 不能创建目录&lt;/p&gt;
+&lt;p&gt;opengauss&lt;br /&gt;
+ 采用木兰宽松许可证协议，允许对代码自由修改、使用、引用&lt;br /&gt;
+针对频繁更新场景，提供 Ustore 存储引擎&lt;br /&gt;
+基于 AI 的智能参数调优和索引推荐，提供 AI 自动参数推荐&lt;br /&gt;
+针对频繁查询场景提供 Astore 存储引擎&lt;/p&gt;
+&lt;p&gt;采用多进程多线程架构&lt;/p&gt;
+&lt;p&gt;openGauss 创建表空间时指定的存储位置可以和默认表空间的不一样&lt;/p&gt;
+&lt;p&gt;鲲鹏 920 通过先进的芯片设计和制造工艺，在单个 Die 上实现了高达 64 个核心&lt;/p&gt;
+&lt;p&gt;软件迁移至鲲鹏平台的过程中，功能验证阶段的主要工作&lt;br /&gt;
+ 1. 进行全面性能测试和调优，以达到最佳性能&lt;br /&gt;
+ 2. 适配交付工具，确保与新平台的兼容性&lt;br /&gt;
+ 3. 执行全量功能测试，确保所有功能正常运行&lt;/p&gt;
+</content>
+        <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
+        <category term="题目" scheme="http://m3k0mi.github.io/categories/ICT/%E9%A2%98%E7%9B%AE/" />
+        <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
+        <updated>2025-11-05T13:14:15.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://m3k0mi.github.io/2025/10/28/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A510/</id>
+        <title>基础软件训练营10</title>
+        <link rel="alternate" href="http://m3k0mi.github.io/2025/10/28/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A510/"/>
+        <content type="html">&lt;h3 id=&#34;web服务和集群&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web服务和集群&#34;&gt;#&lt;/a&gt; web 服务和集群&lt;/h3&gt;
+&lt;h4 id=&#34;http特点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http特点&#34;&gt;#&lt;/a&gt; http 特点&lt;/h4&gt;
+&lt;p&gt;单向连接&lt;br /&gt;
+仅能从客户端向服务器发起请求连接&lt;/p&gt;
+&lt;p&gt;无状态协议&lt;br /&gt;
+每次请求都是独立的，响应完后，本次连接结束&lt;/p&gt;
+&lt;p&gt;明文传输&lt;/p&gt;
+&lt;h4 id=&#34;https解决的两个问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#https解决的两个问题&#34;&gt;#&lt;/a&gt; https 解决的两个问题&lt;/h4&gt;
+&lt;p&gt;1.http 的明文传输&lt;/p&gt;
+&lt;p&gt;2.https 可以确保客户端访问的服务器是真实的，不是别人伪造的的&lt;/p&gt;
+&lt;h4 id=&#34;web服务器响应码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web服务器响应码&#34;&gt;#&lt;/a&gt; web 服务器响应码&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;响应码&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;状态&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;200&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;连接正常&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;403&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;forbidden，访问被拒绝&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;404&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;not found，无法找到资源&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;503&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;server unavailable，服务器当前无法处理客户端请求&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;504&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;gateway timeout，未收到服务器及时响应&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;apache&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#apache&#34;&gt;#&lt;/a&gt; Apache&lt;/h4&gt;
+&lt;p&gt;模块化&lt;/p&gt;
+&lt;p&gt;DSO&lt;br /&gt;
+ 功能模块的动态加载 / 卸载&lt;/p&gt;
+&lt;p&gt;MPM&lt;br /&gt;
+ 对多路处理响应的工作模式&lt;br /&gt;
+ prefork: 多个进程，每个进程处理一个请求&lt;br /&gt;
+ worker: 多个进程和线程，每个进程处理一个请求&lt;/p&gt;
+&lt;p&gt;Event: 每个子线程下有一个监听线程，用于改善 worker 模式下长连接一直占用线程的问题&lt;/p&gt;
+</content>
+        <category term="ICT" scheme="http://m3k0mi.github.io/categories/ICT/" />
+        <category term="华为大赛暑假集训营" scheme="http://m3k0mi.github.io/categories/ICT/%E5%8D%8E%E4%B8%BA%E5%A4%A7%E8%B5%9B%E6%9A%91%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5/" />
+        <category term="ICT" scheme="http://m3k0mi.github.io/tags/ICT/" />
+        <updated>2025-10-28T07:41:05.000Z</updated>
+    </entry>
     <entry>
         <id>http://m3k0mi.github.io/2025/10/21/%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E8%AE%AD%E7%BB%83%E8%90%A59/</id>
         <title>基础软件训练营9</title>
@@ -476,7 +681,7 @@ linux 主流文件系统 xfs,ext&lt;/p&gt;
 &lt;h4 id=&#34;bash_completiond&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bash_completiond&#34;&gt;#&lt;/a&gt; bash_completion.d&lt;/h4&gt;
 &lt;p&gt;系统自动生成&lt;/p&gt;
 &lt;h4 id=&#34;bin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bin&#34;&gt;#&lt;/a&gt; bin&lt;/h4&gt;
-&lt;p&gt;存放操作系统所有的命令，原路径 usr/bin&lt;/p&gt;
+&lt;p&gt;存放操作系统所有的命令，原路径 /usr/bin&lt;/p&gt;
 &lt;h4 id=&#34;boot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#boot&#34;&gt;#&lt;/a&gt; boot&lt;/h4&gt;
 &lt;p&gt;操作系统启动引导分区目录，系统开机时加载的文件&lt;/p&gt;
 &lt;h4 id=&#34;dev&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dev&#34;&gt;#&lt;/a&gt; dev&lt;/h4&gt;
@@ -707,7 +912,7 @@ linux 主流文件系统 xfs,ext&lt;/p&gt;
 管理员是根据用户名来识别用户的&lt;/p&gt;
 &lt;p&gt;系统超级管理员：UID 为 0 的用户就是系统的超级管理员&lt;br /&gt;
 系统用户：0&amp;lt;UID&amp;lt;1000, 这些用户一般不可以登录到操作系统，用来专门运行各种软件和程序&lt;br /&gt;
-普通用户:&amp;lt;=1000UID，这些用户都是超级管理员创建&lt;/p&gt;
+普通用户:&amp;gt;=1000UID，这些用户都是超级管理员创建&lt;/p&gt;
 &lt;p&gt;用户组：多个用户的集合，每个用户必须要属于某一个组&lt;/p&gt;
 &lt;p&gt;分类：&lt;br /&gt;
 1. 私有组 (属组)：用户自己的用户组，创建用户的同时也会创建一个同名的私有组&lt;br /&gt;
@@ -1519,253 +1724,5 @@ file 等&lt;/p&gt;
         <category term="无参数rce" scheme="http://m3k0mi.github.io/categories/web/%E6%97%A0%E5%8F%82%E6%95%B0rce/" />
         <category term="web" scheme="http://m3k0mi.github.io/tags/web/" />
         <updated>2024-05-09T09:57:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://m3k0mi.github.io/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
-        <title>初识正则表达式</title>
-        <link rel="alternate" href="http://m3k0mi.github.io/2024/04/16/%E5%88%9D%E8%AF%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-        <content type="html">&lt;p&gt;正则表达式 (Regular Expression) 是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为 &amp;quot;元字符&amp;quot;），可以用来描述和匹配字符串的特定模式。&lt;/p&gt;
-&lt;p&gt;其实正则表达式就是用来匹配文本的，可以匹配一个或多个字符，灵活地运用正则表达式，就可以完成一些复杂的操作，比如：&lt;/p&gt;
-&lt;p&gt;​		Email 地址：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;​		域名：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[a-zA-Z0-9][-a-zA-Z0-9]&amp;#123;0,62&amp;#125;(/.[a-zA-Z0-9][-a-zA-Z0-9]&amp;#123;0,62&amp;#125;)+/.?
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;接下来就对正则表达式进行拆分学习&lt;/p&gt;
-&lt;h3 id=&#34;php中常用函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#php中常用函数&#34;&gt;#&lt;/a&gt; php 中常用函数&lt;/h3&gt;
-&lt;p&gt;在 php 当中，用到正则的函数有：preg_match、preg_replace、preg_match_all 等&lt;/p&gt;
-&lt;p&gt;就拿 preg_match 来说，一般用法为&lt;/p&gt;
-&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$subject&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;pattern&lt;/p&gt;
-&lt;p&gt;​	要搜索的模式，字符串类型。&lt;/p&gt;
-&lt;p&gt;subject&lt;/p&gt;
-&lt;p&gt;​	输入字符串。&lt;/p&gt;
-&lt;p&gt;所以&lt;/p&gt;
-&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token php language-php&#34;&gt;&lt;span class=&#34;token delimiter important&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;/abc/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;匹配的就是包含 &#39;abc&#39; 的字符串，比如 &#39;abc&#39;、&#39;abcd&#39; 等&lt;/p&gt;
-&lt;p&gt;从上述例子也可以看出，正则一般使用时会加上 //&lt;/p&gt;
-&lt;h3 id=&#34;元字符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#元字符&#34;&gt;#&lt;/a&gt; 元字符&lt;/h3&gt;
-&lt;p&gt;如果只有普通的字符来匹配正则，肯定是没法满足的，所以就有了很多特异功能的字符&lt;/p&gt;
-&lt;h4 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; .&lt;/h4&gt;
-&lt;p&gt;. 匹配任意单个字符，但是不匹配换行符&lt;/p&gt;
-&lt;p&gt;.a 匹配 aa、ba、ca、1a 等&lt;/p&gt;
-&lt;h4 id=&#34;字符集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#字符集&#34;&gt;#&lt;/a&gt; 字符集 [ ]&lt;/h4&gt;
-&lt;p&gt;[ ] 用来指定一个字符集，只要匹配到了字符集里的任意一个字符就可以&lt;/p&gt;
-&lt;p&gt;[Tt] he 匹配 The、the&lt;/p&gt;
-&lt;h4 id=&#34;否定字符集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#否定字符集&#34;&gt;#&lt;/a&gt; 否定字符集&lt;/h4&gt;
-&lt;p&gt;在字符集当中 ^ 表示否定&lt;/p&gt;
-&lt;p&gt;[^t] he 匹配 ahe、bhe、1he 等等，但是不匹配 the&lt;/p&gt;
-&lt;h4 id=&#34;-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-2&#34;&gt;#&lt;/a&gt; *&lt;/h4&gt;
-&lt;p&gt;* 匹配在该符号之前出现的次数大于等于 0 次&lt;/p&gt;
-&lt;p&gt;c*ar 匹配 ar、car、ccar、cccar 等&lt;/p&gt;
-&lt;h4 id=&#34;-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-3&#34;&gt;#&lt;/a&gt; +&lt;/h4&gt;
-&lt;p&gt;+ 与上个字符类似，匹配该字符之前出现的次数 &amp;gt;=1 次&lt;/p&gt;
-&lt;p&gt;c+at 匹配 cat、ccat 但不匹配 at&lt;/p&gt;
-&lt;h4 id=&#34;-4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-4&#34;&gt;#&lt;/a&gt; ?&lt;/h4&gt;
-&lt;p&gt;标记在符号前面的字符为可选，即出现 0 或 1 次&lt;/p&gt;
-&lt;p&gt;例如 [T]?he 匹配字符串 he 和 The&lt;/p&gt;
-&lt;h4 id=&#34;-5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-5&#34;&gt;#&lt;/a&gt; {}&lt;/h4&gt;
-&lt;p&gt;是一个量词，常用来限定一个或一组字符可以重复出现的次数。&lt;/p&gt;
-&lt;p&gt;例如&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[0-9]&amp;#123;2,3&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;匹配最少两位最多三位的 0~9 的数字 如：999 10 等&lt;/p&gt;
-&lt;h4 id=&#34;特征标群&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特征标群&#34;&gt;#&lt;/a&gt; 特征标群 (...)&lt;/h4&gt;
-&lt;p&gt;(...) 中包含的内容会被看成一个整体，和数学中的小括号 () 作用相同&lt;/p&gt;
-&lt;p&gt;例如 (th) e 匹配 the，不匹配 te、he，注意跟字符集 [ ] 区分开来&lt;/p&gt;
-&lt;h4 id=&#34;或运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#或运算符&#34;&gt;#&lt;/a&gt; 或运算符 |&lt;/h4&gt;
-&lt;p&gt;用作判断条件&lt;/p&gt;
-&lt;p&gt;例如 (T|t) he 匹配 the The&lt;/p&gt;
-&lt;h4 id=&#34;转码特殊字符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#转码特殊字符&#34;&gt;#&lt;/a&gt; 转码特殊字符 \&lt;/h4&gt;
-&lt;p&gt;反斜杠 \ 在表达式中用于转码紧跟其后的字符，用于指定 {} [] / \ + * . $ ^ | ? 这些特殊字符&lt;/p&gt;
-&lt;p&gt;作用就是跟上边的元字符区分开来，例如&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\[
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;表示匹配 [字符，跟字符集区分开来&lt;/p&gt;
-&lt;h4 id=&#34;和&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#和&#34;&gt;#&lt;/a&gt; ^ 和 $&lt;/h4&gt;
-&lt;p&gt;^ 匹配字符串输入的开始，$ 则匹配字符串输入的结束&lt;/p&gt;
-&lt;p&gt;首先 (t|h) e 匹配 te、he、ahe 等，但是 ^(t|h) e，匹配的字符串必须以 te 或 he 开头&lt;/p&gt;
-&lt;p&gt;$ 和 ^ 同理&lt;/p&gt;
-&lt;h3 id=&#34;简写字符集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简写字符集&#34;&gt;#&lt;/a&gt; 简写字符集&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;简写字符集&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;.&lt;/td&gt;
-&lt;td&gt;除换行符外所有字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\w&lt;/td&gt;
-&lt;td&gt;匹配所有字母数字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\W&lt;/td&gt;
-&lt;td&gt;匹配所有非字母数字，即符号 等同于 [^ \ w]&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\d&lt;/td&gt;
-&lt;td&gt;匹配数字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\D&lt;/td&gt;
-&lt;td&gt;匹配非数字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\s&lt;/td&gt;
-&lt;td&gt;匹配所有空格字符，等同于 [\t\n\f\r\p {Z}]&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\S&lt;/td&gt;
-&lt;td&gt;匹配所有非空格字符 [^ \ s]&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\f&lt;/td&gt;
-&lt;td&gt;匹配一个换页符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\n&lt;/td&gt;
-&lt;td&gt;匹配一个换行符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\r&lt;/td&gt;
-&lt;td&gt;匹配一个回车符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\t&lt;/td&gt;
-&lt;td&gt;匹配一个制表符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\v&lt;/td&gt;
-&lt;td&gt;匹配一个垂直制表符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\p&lt;/td&gt;
-&lt;td&gt;匹配 CR/LF (等同于 \r\n)，用来匹配 DOS 终止符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;简写字符集主要是提供便利，比如我想匹配所有数字，只需要 \d 就可以了，而不用 [0-9]&lt;/p&gt;
-&lt;h3 id=&#34;标记&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#标记&#34;&gt;#&lt;/a&gt; 标记&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;标记&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;i&lt;/td&gt;
-&lt;td&gt;不区分大小写：将匹配设置为不区分大小写。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;g&lt;/td&gt;
-&lt;td&gt;全局搜索：搜索整个输入字符串中的所有匹配。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;m&lt;/td&gt;
-&lt;td&gt;多行匹配：会匹配输入字符串每一行。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;比如我想匹配 cat 这个字符串，但是也想匹配 Cat，CAt，cAt 等等，一个一个写就会非常麻烦，只要用到标记 i，/cat/i 就可以不区分大小写匹配 cat 了&lt;/p&gt;
-&lt;p&gt;正则在匹配到第一个就会结束，但是标记 g 可以让他继续匹配，从整个字符串找到匹配项&lt;/p&gt;
-&lt;h3 id=&#34;断言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#断言&#34;&gt;#&lt;/a&gt; 断言&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;断言&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;?=&lt;/td&gt;
-&lt;td&gt;正向先行断言&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;?!&lt;/td&gt;
-&lt;td&gt;负向先行断言&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;?&amp;lt;=&lt;/td&gt;
-&lt;td&gt;正向后行断言&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;?&amp;lt;!&lt;/td&gt;
-&lt;td&gt;负向后行断言&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&#34;-6&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-6&#34;&gt;#&lt;/a&gt; ?=&lt;/h4&gt;
-&lt;p&gt;正向先行断言表示后面必须跟着？= 定义的表达式&lt;/p&gt;
-&lt;p&gt;例如：(T|t) he (?=\sfat)&lt;/p&gt;
-&lt;p&gt;这个正则由 3 个部分组成，(T|t) 表示 T 或 t 中的一个，he 字符串，(?=\sfat) 正向先行断言，\s 匹配所有空格符，表示后面必须跟着 空格 fat&lt;/p&gt;
-&lt;p&gt;那么这段正则就匹配 the fat 或 The fat&lt;/p&gt;
-&lt;h4 id=&#34;-7&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-7&#34;&gt;#&lt;/a&gt; ?!&lt;/h4&gt;
-&lt;p&gt;负向先行断言就跟正向先行断言相反，表示后面不能跟着？！定义的表达式&lt;/p&gt;
-&lt;h4 id=&#34;-8&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-8&#34;&gt;#&lt;/a&gt; ?&amp;lt;=&lt;/h4&gt;
-&lt;p&gt;正向后行断言表示前面必须跟着？= 定义的表达式&lt;/p&gt;
-&lt;p&gt;(?&amp;lt;=(T|t) he\s)(fat|mat) 匹配 the 或 The 后面的 fat、mat&lt;/p&gt;
-&lt;h4 id=&#34;-9&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-9&#34;&gt;#&lt;/a&gt; ?&amp;lt;!&lt;/h4&gt;
-&lt;p&gt;负向后行断言与正向先行断言相反，表示前面不能跟着？&amp;lt;! 定义的表达式&lt;/p&gt;
-&lt;h3 id=&#34;应用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应用&#34;&gt;#&lt;/a&gt; 应用&lt;/h3&gt;
-&lt;p&gt;看到这里，已经全部学会了，那么再回过头来看看前面举到的电子邮箱吧 (注意：正则可以有多种写法，不唯一)&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;首先就是 ^ 和 $，表示开头和结尾&lt;/p&gt;
-&lt;p&gt;然后这段正则可以分为四段&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[a-zA-Z0-9_-]+ 	@	[a-zA-Z0-9_-]+	(\.[a-zA-Z0-9_-]+)+
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;第一段表示多个字母或数字或下划线&lt;/p&gt;
-&lt;p&gt;第二段就是字符 @&lt;/p&gt;
-&lt;p&gt;第三段和第二段一样&lt;/p&gt;
-&lt;p&gt;第四段表示。后面跟多个字母或数字或下划线&lt;/p&gt;
-&lt;p&gt;组合起来如：123@123.com ，就是电子邮箱的格式&lt;/p&gt;
-</content>
-        <category term="正则表达式" scheme="http://m3k0mi.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
-        <category term="正则表达式" scheme="http://m3k0mi.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" />
-        <updated>2024-04-16T06:34:12.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://m3k0mi.github.io/2024/04/15/web%E5%85%A5%E9%97%A8/</id>
-        <title>web入门</title>
-        <link rel="alternate" href="http://m3k0mi.github.io/2024/04/15/web%E5%85%A5%E9%97%A8/"/>
-        <content type="html">&lt;h3 id=&#34;入门指南&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#入门指南&#34;&gt;#&lt;/a&gt; 入门指南&lt;/h3&gt;
-&lt;h4 id=&#34;一些在线做题网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一些在线做题网站&#34;&gt;#&lt;/a&gt; 一些在线做题网站：&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://ctf.show/challenges&#34;&gt;https://ctf.show/challenges&lt;/a&gt;	(ctfshow)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://adworld.xctf.org.cn&#34;&gt;https://adworld.xctf.org.cn&lt;/a&gt;      (攻防世界)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ctf.bugku.com/&#34;&gt;https://ctf.bugku.com/&lt;/a&gt;      (bugku)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.ctfhub.com/&#34;&gt;https://www.ctfhub.com/&lt;/a&gt;      (CTFhub)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.nssctf.cn/&#34;&gt;https://www.nssctf.cn/&lt;/a&gt;      (nssctf)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://buuoj.cn/&#34;&gt;https://buuoj.cn/&lt;/a&gt;      (buuctf)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;靶场&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#靶场&#34;&gt;#&lt;/a&gt; 靶场：&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/digininja/DVWA&#34;&gt;https://github.com/digininja/DVWA&lt;/a&gt;	(dvwa)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/zhuifengshaonianhanlu/pikachu&#34;&gt;https://github.com/zhuifengshaonianhanlu/pikachu&lt;/a&gt;      (pikachu)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Audi-1/sqli-labs&#34;&gt;https://github.com/Audi-1/sqli-labs&lt;/a&gt;      (sqli-labs sql 注入靶场)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/c0ny1/upload-labs&#34;&gt;https://github.com/c0ny1/upload-labs&lt;/a&gt;      (upload-labs 文件上传靶场)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;搭建方法可网上搜索&lt;/p&gt;
-&lt;h4 id=&#34;工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#工具&#34;&gt;#&lt;/a&gt; 工具：&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;burpsuite (抓包软件)&lt;/li&gt;
-&lt;li&gt;firefox 浏览器&lt;/li&gt;
-&lt;li&gt;antsword 蚁剑&lt;/li&gt;
-&lt;li&gt;kali 虚拟机&lt;/li&gt;
-&lt;li&gt;dirsearch (扫描网站后台工具)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;#该文章测试用&lt;/p&gt;
-</content>
-        <category term="web" scheme="http://m3k0mi.github.io/categories/web/" />
-        <category term="入门" scheme="http://m3k0mi.github.io/categories/web/%E5%85%A5%E9%97%A8/" />
-        <category term="web" scheme="http://m3k0mi.github.io/tags/web/" />
-        <updated>2024-04-15T12:09:10.000Z</updated>
     </entry>
 </feed>
